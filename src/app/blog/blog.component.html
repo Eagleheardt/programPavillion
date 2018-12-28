@@ -1,0 +1,27 @@
+<h1>Blog</h1>
+
+<div>
+  <p></p>
+</div>
+
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+  <h5 *ngIf="success">Your submission succeeded!</h5>
+  <label>
+    Title:
+    <input type="text" formControlName="blogTitle">
+    <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
+        <div *ngIf="messageForm.controls.name.errors.required">Blog title is required.</div>
+    </div>
+  </label>
+
+  <label>
+    Content:
+    <textarea formControlName="blogContent"></textarea>
+    <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
+        <div *ngIf="messageForm.controls.name.errors.required">Blog content is required.</div>
+    </div>
+  </label>
+
+  <input type="submit" value="Post!" class="cta">
+
+</form>

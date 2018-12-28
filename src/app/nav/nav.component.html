@@ -1,0 +1,47 @@
+<!-- <header>
+  <div class="container">
+    <a routerLink="/" class="logo">{{ appTitle }}</a>
+    <nav>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/professional">Professional</a></li>
+        <li><a routerLink="/personal">Personal</a></li>
+        <li><a routerLink="/blog">Blog</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header> -->
+
+<header><!-- TODO: make sub-menu items -->
+  <div class="container">
+    <a routerLink="/" class="logo">{{ appTitle }}</a>
+    <nav>
+      <ul>
+          <li><a routerLink="/">Home</a></li>
+        <li>
+            <div class="dropdown">
+                <a routerLink="/professional" class="dropbtn">Professional</a>
+                <div class="dropdown-content">
+                  <a routerLink="/professional/istock">iStock</a>
+                  <a routerLink="/professional/snek">Snek</a>
+                </div>
+              </div>
+        </li>
+        <li>
+            <div class="dropdown">
+                <a routerLink="/personal" class="dropbtn">Personal</a>
+                <div class="dropdown-content">
+                  <a routerLink="/personal/forensics">Forensics</a>
+                  <a routerLink="/personal/roms">ROM Patching</a>
+                </div>
+              </div>
+        </li>
+        <li><a routerLink="/blog">Blog</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

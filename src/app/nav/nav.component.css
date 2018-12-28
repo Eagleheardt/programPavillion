@@ -1,0 +1,72 @@
+header{
+    background: purple;
+}
+
+header .logo {
+    font-weight: bolder;
+    font-size:1.1em;
+}
+
+header nav {
+    justify-self: left;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    float: left;
+}
+
+header nav ul li a {
+    padding: 1.5em;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: yellow;
+    font-weight: 700;
+}
+
+header nav ul li a:hover {
+    background: blue;
+}
+
+  /* 
+  ********************************************
+  Dropdown menu CSS 
+  ********************************************
+  */
+.dropbtn {
+    padding: 16px;
+    border: none;
+  }
+  
+  /* The container - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    right: 0;
+    display: none;
+    position: absolute;
+    border: solid black thin;
+    background-color: purple;
+    min-width: 15%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
