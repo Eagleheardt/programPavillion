@@ -13,7 +13,7 @@ import { RomsComponent } from './roms/roms.component';
 
 
 // Professional Routes Components
-import { IstockComponent } from './istock/istock.component';
+import { SavorComponent } from './savor/savor.component';
 import { SnekComponent } from './snek/snek.component';
 
 /* const routes: Routes = [
@@ -38,7 +38,7 @@ const routes: Routes = [
   {path: 'personal/roms', component: RomsComponent},
 
 // Professional Paths
-  {path: 'professional/istock', component: IstockComponent}, // This will use sub pages instead of nesting pages
+  {path: 'professional/savor', component: SavorComponent}, // This will use sub pages instead of nesting pages
   {path: 'professional/snek', component: SnekComponent}
 ];
 

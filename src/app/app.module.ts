@@ -16,8 +16,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { Title }  from '@angular/platform-browser';
 import { ForensicsComponent } from './forensics/forensics.component';
 import { RomsComponent } from './roms/roms.component';
-import { IstockComponent } from './istock/istock.component';
 import { SnekComponent } from './snek/snek.component';
+import { SavorComponent } from './savor/savor.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +33,8 @@ import { SnekComponent } from './snek/snek.component';
     AppComponent,
     ForensicsComponent,
     RomsComponent,
-    IstockComponent,
-    SnekComponent
+    SnekComponent,
+    SavorComponent
   ],
   imports: [
     BrowserModule,
