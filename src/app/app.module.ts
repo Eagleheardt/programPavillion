@@ -18,6 +18,9 @@ import { ForensicsComponent } from './forensics/forensics.component';
 import { RomsComponent } from './roms/roms.component';
 import { SnekComponent } from './snek/snek.component';
 import { SavorComponent } from './savor/savor.component';
+import { MinesweeperComponent } from './minesweeper/minesweeper.component';
+import { MadnessComponent } from './madness/madness.component';
+import { PiratesortComponent } from './piratesort/piratesort.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,9 @@ import { SavorComponent } from './savor/savor.component';
     RomsComponent,
     SnekComponent,
     SavorComponent,
+    MinesweeperComponent,
+    MadnessComponent,
+    PiratesortComponent,
   ],
   imports: [
     BrowserModule,
