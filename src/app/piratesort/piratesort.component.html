@@ -1,3 +1,155 @@
-<p>
-  piratesort works!
-</p>
+<body>
+<div id="header" style="text-align: center;">
+	<h2>What kind of pirate are ye?</h2>
+</div>
+<div class="question open" id="q0">
+	<p>Want to know what sort of pirate ye be? Just use the MAPS! Push START to begin!</p>
+</div>
+<div class="question" id="q1">
+	<p>Do ye like water?</p>
+</div>
+<div class="question" id="q2">
+	<p>What would ye like to fight wit?</p>
+</div>
+<div class="question" id="q3">
+	<p>What do ye like to drink?</p>
+</div>
+<div class="question" id="q4">
+	<p>Did ye drink all the grog?</p>
+</div>
+<div class="question" id="q5">
+	<p>What part of the ship do ye like more?</p>
+</div>
+<div class="question" id="q6">
+	<p>What do ye call the pirate with the most booty?</p>
+</div>
+<div class="question" id="q99">
+	<p></p>
+</div>
+<div id="map">
+	<table>
+		<tr>
+			<td>
+					<div id="start"><button id="startBtn">START</button></div>
+				</td>
+				<td>
+					<div id="b1"><img src="{{ assetArrowRight }}"/></div>
+				</td>
+				<td>
+					<div id="c1"><button id="c1Btn">YAR!</button></div>
+				</td>
+				<td>
+					<div id="d1"><img src="{{ assetArrowRight }}"/></div>
+				</td>
+				<td>
+					<div id="e1"><button id="e1Btn">A Pistol!</button></div>
+				</td>
+				<td>
+					<div id="f1"><img src="{{ assetArrowRightCurve }}"/></div>
+				</td>
+		</tr> <!-- end of row -->
+		<tr>
+			<td>
+				<div id="a2"><img src="{{ assetArrowDown }}"/></div>
+			</td>
+			<td><div class="obstacle"><img src="{{ assetRock }}"/></div></td> <!-- ROCK -->
+			<td>
+				<div id="c2"><img src="{{ assetArrowDown }}"/></div>
+			</td>
+			<td><div class="obstacle"><img src="{{ assetTree }}"/></div></td> <!-- TREE -->
+			<td>
+				<div id="e2"><img src="{{ assetArrowDown }}"/></div>
+			</td>
+			<td>
+				<div id="f2"><img src="{{ assetArrowRightCurve }}"/></div>
+			</td>
+		</tr> <!-- end of row -->
+		<tr>
+			<td>
+				<div id="a3"><button id="a3Btn">NAY!</button></div>
+			</td>
+			<td>
+				<div id="b3"><img src="{{ assetArrowRight }}"/></div>
+			</td>
+			<td>
+				<div id="c3a"><button id="c3aBtn">Rum!</button></div>
+				<div id="c3b"><button id="c3bBtn">A Sword!</button></div>
+			</td>
+			<td>
+				<div id="d3"><img src="{{ assetArrowRight }}"/></div>
+			</td>
+			<td>
+				<div id="e3a"><button id="e3aBtn">Yea!</button></div>
+				<div id="e3b"><button id="e3bBtn">Starboard</button></div>
+			</td>
+			<td>
+				<div id="f3"><img src="{{ assetArrowRightCurve }}"/></div>
+				</td>
+			</tr> <!-- end of row -->
+			<tr>
+				<td>
+					<div id="a4"><img src="{{ assetArrowDown }}"/></div>
+				</td>
+				<td><div class="obstacle"><img src="{{ assetTree }}"/></div></td> <!-- TREE -->
+				<td>
+					<div id="c4"><img src="{{ assetArrowDown }}"/></div>
+				</td>
+				<td><div class="obstacle"><img src="{{ assetRock }}"/></div></td> <!-- ROCK -->
+				<td>
+					<div id="e4"><img src="{{ assetArrowDown }}"/></div>
+				</td>
+				<td>
+					<div id="f4"><img src="{{ assetArrowRightCurve }}"/></div>
+				</td>
+			</tr> <!-- end of row -->
+			<tr>
+				<td>
+					<div id="a5"><button id="a5Btn">Water</button></div>
+				</td>
+				<td><div class="obstacle"><img src="{{ assetRock }}"/></div></td>
+				<td>
+					<div id="c5a"><button id="c5aBtn">Nay!</button></div>
+					<div id="c5b"><button id="c5bBtn">Port</button></div>
+				</td>
+				<td><div class="obstacle"><img src="{{ assetRock }}"/></div></td>
+				<td>
+					<div id="e5"><img src="{{ assetArrowDown }}"/></div>
+				</td>
+				<td>
+					<div id="f5"><img src="{{ assetArrowRightCurve }}"/></div>
+				</td>
+			</tr> <!-- end of row -->
+			<tr>
+				<td>
+					<div id="a6"><img src="{{ assetArrowRight }}"/></div>
+				</td>
+				<td>
+					<div id="b6"><img src="{{ assetArrowRight }}"/></div>
+				</td>
+				<td>
+					<div id="c6"><img src="{{ assetArrowDown }}"/></div>
+				</td>
+				<td>
+					<div id="d6"><img src="{{ assetArrowLeft }}"/></div>
+				</td>
+				<td>
+					<div id="e6"><img src="{{ assetArrowLeft }}"/></div>
+				</td> 
+				<td>
+					<div id="f6"><img src="{{ assetArrowLeft }}"/></div>
+				</td>
+			</tr><!-- end of row -->
+	</table><!-- end of table -->
+</div>
+
+<div class="result" id="res1"><p>Ye be a Landlubber!</p></div>
+<div class="result" id="res2"><p>Ye be a Captain!</p></div>
+<div class="result" id="res3"><p>Ye be a Crewman!</p></div>
+<div class="result" id="res4"><p>Ye be a Carcass!</p></div>
+<div class="result" id="res5"><p>Ye be a Cabin Boy!</p></div>
+
+</body>
+
+<footer>
+  <h3>Pirate Pete<sup>&copy;</sup></h3>
+</footer>

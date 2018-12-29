@@ -1,0 +1,113 @@
+h2{
+	font-size:42px;
+	display:inline-block;
+	color:blue;
+}
+
+body{
+	background-image: url("src/assets/challenges/piratesort/mapImg.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 800px;
+}
+
+div#header {
+	max-height:75px;
+}
+
+div#map{
+	padding:0 10%;
+}
+
+td{
+	width:5%;
+	height:2%;
+	margin-bottom:10px;
+	text-align:center;
+}
+
+button{
+	width:95%;
+	height:95%;
+	vertical-align:middle;
+}
+
+tr td div img{
+	max-width:60%;
+	max-height:40px;
+	vertical-align:middle;
+	text-align:center;
+}
+
+table{
+	background-image: url("src/assets/challenges/piratesort/grass.jpg");
+	border-radius: 5%;
+	min-height:270px;
+}
+
+div > p{
+	text-align: center;
+	color: green;
+	font-size:26px;
+	font-weight:bold;
+	background:orange;
+	display:inline-block;
+	max-width:80%;
+}
+
+div div{
+	text-align: center;
+	display: none;
+}
+
+div div.open{
+	text-align: center;
+	display: block;
+}
+
+div.question{
+	display: none;
+	text-align:center;
+}
+
+div.question.open{
+	display:block;
+}
+
+div#start{
+	display:block;
+}
+
+div div.obstacle{
+	display:block;
+}
+
+div.result{
+	display:none;
+	text-align:center;
+}
+
+div.result.open{
+	display:block;
+}
+/*
+div.result#res1{
+	display:block;
+}
+*/
+footer {
+  bottom:0 !important;
+  position:absolute !important;
+}
+
+footer h3 {
+	font-size:30px;
+	display:inline-block;
+	color: purple;
+	background:yellow;
+}
+
+footer sup{
+	font-size:10px;
+}

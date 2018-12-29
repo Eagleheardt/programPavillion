@@ -10,9 +10,7 @@ body {
     font-size: 20px;
 }
 
-a {
-    text-decoration: none;
-}
+
 
 .container {
     width: 80%;
@@ -33,4 +31,33 @@ section {
 
 .error {
     color:red;
+}
+
+/*
+****************************
+****** Page Content Setup **
+****************************
+*/
+.pageContent {
+    max-width: 65%;
+}
+
+/*
+****************************
+** Home Page Content Setup *
+****************************
+*/
+
+.homePageContent {
+
+}
+
+/*
+****************************
+***** Landing Page Setup ***
+****************************
+*/
+
+.landingPage {
+
 }
