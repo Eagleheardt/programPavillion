@@ -6,15 +6,21 @@ import { ContactComponent } from './contact/contact.component';
 import { PersonalComponent } from './personal/personal.component';
 import { ProfessionalComponent } from './professional/professional.component';
 import { BlogComponent } from './blog/blog.component';
+import { ChallengesComponent } from './challenges/challenges.component'
 
 // Personal Routes Components
 import { ForensicsComponent } from './forensics/forensics.component';
 import { RomsComponent } from './roms/roms.component';
 
-
 // Professional Routes Components
 import { SavorComponent } from './savor/savor.component';
 import { SnekComponent } from './snek/snek.component';
+
+// Challenges Routes Components
+import { MinesweeperComponent } from './minesweeper/minesweeper.component';
+import { MadnessComponent } from './madness/madness.component';
+import { PiratesortComponent } from './piratesort/piratesort.component';
+
 
 
 /* const routes: Routes = [
@@ -33,6 +39,7 @@ const routes: Routes = [
   {path: 'personal', component: PersonalComponent},
   {path: 'professional', component: ProfessionalComponent},
   {path: 'blog', component: BlogComponent},
+  {path: 'challenges', component: ChallengesComponent},
 
 // Personal Paths
   {path: 'personal/forensics', component: ForensicsComponent}, // This will use sub pages instead of nesting pages
@@ -40,7 +47,15 @@ const routes: Routes = [
 
 // Professional Paths
   {path: 'professional/savor', component: SavorComponent}, // This will use sub pages instead of nesting pages
-  {path: 'professional/snek', component: SnekComponent}
+  {path: 'professional/snek', component: SnekComponent},
+
+// Challenges Paths
+  {path: 'challenges/minesweeper', component: MinesweeperComponent}, // This will use sub pages instead of nesting pages
+  {path: 'challenges/madness', component: MadnessComponent},
+  {path: 'challenges/piratesort', component: PiratesortComponent}
+
+
+
 ];
 /*
 ************************************
