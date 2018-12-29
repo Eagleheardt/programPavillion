@@ -16,6 +16,7 @@ import { RomsComponent } from './roms/roms.component';
 import { SavorComponent } from './savor/savor.component';
 import { SnekComponent } from './snek/snek.component';
 
+
 /* const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'about', component: AboutComponent},
@@ -41,6 +42,11 @@ const routes: Routes = [
   {path: 'professional/savor', component: SavorComponent}, // This will use sub pages instead of nesting pages
   {path: 'professional/snek', component: SnekComponent}
 ];
+/*
+************************************
+************  End of Routes  *******
+************************************
+*/
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

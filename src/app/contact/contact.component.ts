@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-contact',
@@ -12,7 +13,7 @@ export class ContactComponent implements OnInit {
   submitted: boolean = false;
   success: boolean = false;
 
-  constructor(private formBuilder: FormBuilder) { 
+  constructor(private formBuilder: FormBuilder, private dataService: DataService) { 
     this.messageForm = this.formBuilder.group({
       name: ['',Validators.required],
       message: ['',Validators.required]
@@ -30,6 +31,6 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.dataService.setPageTitle("Contact");
   }
-
 }

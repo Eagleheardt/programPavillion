@@ -1,17 +1,24 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Title } from '@angular/platform-browser';
+
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private titleService: Title) { }
+
+  public setPageTitle( newTitle: string) {
+    this.titleService.setTitle( newTitle );
+  }
+
+  
 
  /*  firstClick() {
     return console.log('clicked');
   } */
 
-  getUsers() {
+ /*  getUsers() {
     return this.http.get('http://reqres.in/api/users')
-  }
+  } */
 }

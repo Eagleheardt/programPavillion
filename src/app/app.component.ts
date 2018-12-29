@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title }     from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   }
   
   ngOnInit() {
-    this.setTitle("Programming Pavillion");
+    this.setTitle("Programming Pavilion");
   }
   
 }

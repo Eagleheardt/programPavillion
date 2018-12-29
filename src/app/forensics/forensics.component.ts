@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-forensics',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForensicsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.dataService.setPageTitle("Forensics Project");
   }
 
 }
