@@ -52,9 +52,11 @@ header nav ul li a:hover {
   /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
     right: 0;
-    display: none;
+    margin-top: 20px;
+    overflow: hidden;
+    max-height: 0;
     position: absolute;
-    border: solid black thin;
+    
     background-color: purple;
     min-width: 15%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -69,4 +71,8 @@ header nav ul li a:hover {
   }
   
   /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {display: block;}
+  .dropdown:hover .dropdown-content {
+      transition: all 750ms;
+      border: solid black thin;
+      max-height:300px;
+    }
