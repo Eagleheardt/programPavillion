@@ -1,6 +1,18 @@
-# Program Pavillion!!
+# Programming Pavilion!!
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
+
+I wanted to create a hub for which I could display some of my accomplishments, as well as develop my abilities. This is the first iteration of that desire.
+
+This is an angular website project, where I have many goals:
+
+User input
+
+Persistence
+
+Database queries
+
+User reports
 
 ## Development server
 

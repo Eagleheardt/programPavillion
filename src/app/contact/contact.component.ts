@@ -31,6 +31,6 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataService.setPageTitle("Contact");
+    this.dataService.setPageTitle("Contact the Pirate!");
   }
 }

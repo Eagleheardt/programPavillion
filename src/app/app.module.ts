@@ -34,7 +34,7 @@ import { SavorComponent } from './savor/savor.component';
     ForensicsComponent,
     RomsComponent,
     SnekComponent,
-    SavorComponent
+    SavorComponent,
   ],
   imports: [
     BrowserModule,
