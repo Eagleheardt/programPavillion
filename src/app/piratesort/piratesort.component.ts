@@ -11,8 +11,8 @@ export class PiratesortComponent implements OnInit {
   assetArrowLeft: string = "assets/challenges/piratesort/arrowLeft.png";
   assetArrowRight: string = "assets/challenges/piratesort/arrowRight.png";
   assetArrowrightCurve: string = "assets/challenges/piratesort/arrowRightCurve.png";
-  assetGrass: string = "assets/challenges/piratesort/grass.jpg";
-  assetMapImg: string = "assets/challenges/piratesort/mapImg.jpg";
+  assetGrass: string = "src/assets/challenges/piratesort/grass.jpg";
+  assetMapImg: string = "src/assets/challenges/piratesort/mapImg.jpg";
   assetRock: string = "assets/challenges/piratesort/rock.png";
   assetTree: string = "assets/challenges/piratesort/tree.png";
 
