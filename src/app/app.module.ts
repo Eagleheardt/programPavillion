@@ -22,6 +22,7 @@ import { MinesweeperComponent } from './minesweeper/minesweeper.component';
 import { MadnessComponent } from './madness/madness.component';
 import { PiratesortComponent } from './piratesort/piratesort.component';
 import { ChallengesComponent } from './challenges/challenges.component';
+import { NavmediaComponent } from './navmedia/navmedia.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ChallengesComponent } from './challenges/challenges.component';
     MadnessComponent,
     PiratesortComponent,
     ChallengesComponent,
+    NavmediaComponent,
   ],
   imports: [
     BrowserModule,
