@@ -11,8 +11,6 @@ export class PiratesortComponent implements OnInit {
   assetArrowLeft: string = "assets/challenges/piratesort/arrowLeft.png";
   assetArrowRight: string = "assets/challenges/piratesort/arrowRight.png";
   assetArrowrightCurve: string = "assets/challenges/piratesort/arrowRightCurve.png";
-  assetGrass: string = "src/assets/challenges/piratesort/grass.jpg";
-  assetMapImg: string = "src/assets/challenges/piratesort/mapImg.jpg";
   assetRock: string = "assets/challenges/piratesort/rock.png";
   assetTree: string = "assets/challenges/piratesort/tree.png";
 
@@ -20,7 +18,11 @@ export class PiratesortComponent implements OnInit {
 
   ngOnInit() {
   }
-        /*
+  
+/* RAW JS from project */
+        
+  
+/*
 var vols = document.querySelectorAll('.prs');
 
 for(var i = 0, l = vols.length; i < l; i++) {
@@ -30,7 +32,7 @@ for(var i = 0, l = vols.length; i < l; i++) {
 	}
 }
 */
-/* RAW JS from project */
+
 /* var hideQuestions = function () {
 	var questions = document.querySelectorAll('.question')
 	for(var i = 0, l = questions.length; i < l; i++) {
