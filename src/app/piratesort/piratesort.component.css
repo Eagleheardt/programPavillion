@@ -1,3 +1,8 @@
+:root{
+    --assetMapImg: url("src//assets/challenges/piratesort/mapImg.jpg");
+    --assetGrassImg: url("src/assets/challenges/piratesort/grass.jpg");
+}
+
 h2{
 	font-size:42px;
 	display:inline-block;
@@ -5,7 +10,8 @@ h2{
 }
 
 body{
-	background-image: url("src/assets/challenges/piratesort/mapImg.jpg");
+    /*background-image: var(--assetMapImg);*/
+    background-image: url("src//assets/challenges/piratesort/mapImg.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
     background-size: cover;
@@ -41,7 +47,8 @@ tr td div img{
 }
 
 table{
-	background-image: url("src/assets/challenges/piratesort/grass.jpg");
+    background-image: var(--assetGrassImg);
+    background-image: url("src/assets/challenges/piratesort/grass.jpg");
 	border-radius: 5%;
 	min-height:400px;
 }
@@ -97,8 +104,9 @@ div.result#res1{
 }
 */
 footer {
-  bottom:0 !important;
-  position:absolute !important;
+  bottom: 20px;
+  left:100px;
+  position:absolute;
 }
 
 footer h3 {
