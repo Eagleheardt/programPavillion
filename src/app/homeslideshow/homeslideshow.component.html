@@ -1,12 +1,12 @@
-<div class="slide">
-  <slideshow 
-    [imageUrls]="imageUrlArray"
-    [height]="height"
-    [minHeight]="'525px'"
-    [autoPlay]="true"
-    [showArrows]="false"
-    [imageUrls]="imageSources"
-    [lazyLoad]="imageSources?.length > 1"
-    [autoPlayWaitForLazyLoad]="true">
-  </slideshow>
-</div>
+<swiper [config]="config">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let pic of imageUrlArray">
+        <img src="{{ pic }}" />
+      </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </swiper>

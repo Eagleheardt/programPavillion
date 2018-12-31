@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SlideshowModule } from 'ng-simple-slideshow';
+import { SwiperModule } from 'angular2-useful-swiper';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -57,7 +57,7 @@ import { HomeslideshowComponent } from './homeslideshow/homeslideshow.component'
     HttpClientModule,
     ReactiveFormsModule,
     BrowserModule,
-    SlideshowModule
+    SwiperModule
   ],
   providers: [
     Title
