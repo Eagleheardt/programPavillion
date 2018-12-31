@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, transition, animate, style } from '@angular/animations'
+import { SwiperModule } from 'angular2-useful-swiper';
 
 @Component({
   selector: 'app-homeslideshow',
@@ -18,18 +18,9 @@ export class HomeslideshowComponent implements OnInit {
     'assets/homeslideshow/sqlite.png'
   ];
 
-  config: SwiperOptions = {
-    autoplay: 3000, // Autoplay option having value in milliseconds
-    initialSlide: 3, // Slide Index Starting from 0
-    slidesPerView: 3, // Slides Visible in Single View Default is 1
-    pagination: '.swiper-pagination', // Pagination Class defined
-    paginationClickable: true, // Making pagination dots clicable
-    nextButton: '.swiper-button-next', // Class for next button
-    prevButton: '.swiper-button-prev', // Class for prev button
-    spaceBetween: 30 // Space between each Item
-  };
 
-  constructor() { }
+
+  constructor(private swiper: SwiperModule) { }
 
   ngOnInit() {
   }
