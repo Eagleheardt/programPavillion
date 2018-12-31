@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SlideshowModule } from 'ng-simple-slideshow';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,8 @@ import { MadnessComponent } from './madness/madness.component';
 import { PiratesortComponent } from './piratesort/piratesort.component';
 import { ChallengesComponent } from './challenges/challenges.component';
 import { NavmediaComponent } from './navmedia/navmedia.component';
+import { Decorbar1Component } from './decorbar1/decorbar1.component';
+import { HomeslideshowComponent } from './homeslideshow/homeslideshow.component';
 
 @NgModule({
   declarations: [
@@ -45,13 +48,16 @@ import { NavmediaComponent } from './navmedia/navmedia.component';
     PiratesortComponent,
     ChallengesComponent,
     NavmediaComponent,
+    Decorbar1Component,
+    HomeslideshowComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    BrowserModule
+    BrowserModule,
+    SlideshowModule
   ],
   providers: [
     Title

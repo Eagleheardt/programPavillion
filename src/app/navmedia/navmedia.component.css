@@ -1,19 +1,18 @@
-.navMedia {
+nav {
     max-width: 10%;
     float: right;
-}
-
-nav {
-    background:purple;
-    justify-self: right;
+    position: absolute;
+    right:30px;
 }
 
 nav ul {
+    background:purple;
     list-style-type: none;
 }
 
 nav ul li {
     padding: 5px;
+    display: flex;
 }
 
 nav ul li a {

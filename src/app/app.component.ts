@@ -9,6 +9,7 @@ import { Title } from '@angular/platform-browser';
 export class AppComponent implements OnInit {
   title: string = 'Eagleheardt Angular Testing';
   thirst: string = 'testING';
+  isHome: boolean = false;
   
   public constructor(private titleService: Title ) { }
 

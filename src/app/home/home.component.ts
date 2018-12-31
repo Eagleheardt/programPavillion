@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { DataService } from '../data.service';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-home',
@@ -10,14 +11,22 @@ export class HomeComponent implements OnInit {
 
   h1Style: boolean = false;
 
-  constructor(private dataService: DataService) { }
+  constructor(
+    private dataService: DataService, 
+    private appComponent: AppComponent) { 
+  }
 
   ngOnInit() {
+    this.appComponent.isHome = true;
     this.dataService.setPageTitle("Pavilion Home");
   }
 
   firstClick() {
     this.h1Style = !this.h1Style;
+  }
+  @HostListener('window:beforeunload')
+  doSomething() {
+    this.appComponent.isHome = false;
   }
 
 }

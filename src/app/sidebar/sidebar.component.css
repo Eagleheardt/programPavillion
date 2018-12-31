@@ -1,4 +1,5 @@
-/* body, html {
+.sideContent {
+    float: left;
     max-width:20%;
     min-width:10%;
-} */
+}
