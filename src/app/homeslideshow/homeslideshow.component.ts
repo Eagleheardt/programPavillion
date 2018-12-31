@@ -4,18 +4,7 @@ import { trigger, transition, animate, style } from '@angular/animations'
 @Component({
   selector: 'app-homeslideshow',
   templateUrl: './homeslideshow.component.html',
-  styleUrls: ['./homeslideshow.component.css'],
-  animations: [
-    trigger('slideInOut', [
-      transition(':enter', [
-        style({transform: 'translateY(-100%)'}),
-        animate('200ms ease-in', style({transform: 'translateX(0%)'}))
-      ]),
-      transition(':leave', [
-        animate('200ms ease-in', style({transform: 'translateX(-100%)'}))
-      ])
-    ])
-  ]
+  styleUrls: ['./homeslideshow.component.css']
 })
 export class HomeslideshowComponent implements OnInit {
 
