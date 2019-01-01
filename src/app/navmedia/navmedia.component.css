@@ -4,10 +4,17 @@ nav {
     position: absolute;
     right:30px;
 }
+nav h4 {
+    background: purple;
+    color: yellow;
+    text-align: center;
+    padding: 0.5em 0;
+}
 
 nav ul {
     background:purple;
     list-style-type: none;
+    padding-inline-start: 0;
 }
 
 nav ul li {
