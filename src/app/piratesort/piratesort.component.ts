@@ -12,9 +12,11 @@ export class PiratesortComponent implements OnInit {
   assetArrowDown: string = "assets/challenges/piratesort/arrowDown.png";
   assetArrowLeft: string = "assets/challenges/piratesort/arrowLeft.png";
   assetArrowRight: string = "assets/challenges/piratesort/arrowRight.png";
-  assetArrowrightCurve: string = "assets/challenges/piratesort/arrowRightCurve.png";
+  assetArrowRightCurve: string = "assets/challenges/piratesort/arrowRightCurve.png";
   assetRock: string = "assets/challenges/piratesort/rock.png";
   assetTree: string = "assets/challenges/piratesort/tree.png";
+
+  // all booleans control the state of the divs
 
   // div booleans - control display of their respective divs
   b1Bool: boolean = true;
@@ -102,7 +104,7 @@ export class PiratesortComponent implements OnInit {
   startBtnClick() {
 	this.turnOffQuestions();
 	this.redOffButton('startBtn');
-	
+
 	this.b1Bool = false;
 	this.a2Bool = false;
 	this.a3Bool = false;
@@ -122,6 +124,72 @@ export class PiratesortComponent implements OnInit {
 	this.q2Bool = false;
   }
 
+  e1BtnClick() {
+	this.turnOffQuestions();
+	this.redOffButton('e1Btn');
+	this.disableByID('c3bBtn');
+
+	this.f1Bool = false;
+	this.f2Bool = false;
+	this.f3Bool = false;
+	this.f4Bool = false;
+	this.f5Bool = false;
+	this.f6Bool = false;
+	this.e6Bool = false;
+	this.d6Bool = false;
+	this.c6Bool = false;
+	this.q99Bool = false;
+	this.res2Bool = false;
+  }
+/* 
+  c1BtnClick() {
+	this.turnOffQuestions();
+	this.redOffButton('c1Btn');
+	this.disableByID('a3Btn');
+
+	this.c2Bool = false;
+	this.c3bBool = false;
+	this.d1Bool = false;
+	this.e1Bool = false;
+	this.q2Bool = false;
+  }
+
+  c1BtnClick() {
+	this.turnOffQuestions();
+	this.redOffButton('c1Btn');
+	this.disableByID('a3Btn');
+
+	this.c2Bool = false;
+	this.c3bBool = false;
+	this.d1Bool = false;
+	this.e1Bool = false;
+	this.q2Bool = false;
+  }
+
+  c1BtnClick() {
+	this.turnOffQuestions();
+	this.redOffButton('c1Btn');
+	this.disableByID('a3Btn');
+
+	this.c2Bool = false;
+	this.c3bBool = false;
+	this.d1Bool = false;
+	this.e1Bool = false;
+	this.q2Bool = false;
+  }
+
+  c1BtnClick() {
+	this.turnOffQuestions();
+	this.redOffButton('c1Btn');
+	this.disableByID('a3Btn');
+
+	this.c2Bool = false;
+	this.c3bBool = false;
+	this.d1Bool = false;
+	this.e1Bool = false;
+	this.q2Bool = false;
+  }
+ */
   constructor() { }
 
   ngOnInit() {

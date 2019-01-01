@@ -5,3 +5,7 @@
 .large {
     background-color: red;
 }
+
+h1 {
+    display:inline-block;
+}
