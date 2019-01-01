@@ -4,148 +4,148 @@
     <h2>What kind of pirate are ye?</h2>
   </div>
 
-  <div class="question open" id="q0">
+  <div [style.display]="q0Bool ? 'block':'none'" class="question" id="q0">
     <p>Want to know what sort of pirate ye be? Just use the MAPS! Push START to begin!</p>
   </div>
 
-  <div class="question" id="q1">
+  <div [style.display]="!q1Bool ? 'block':'none'" class="question" id="q1">
     <p>Do ye like water?</p>
   </div>
-  <div class="question" id="q2">
+  <div [style.display]="!q2Bool ? 'block':'none'" class="question" id="q2">
     <p>What would ye like to fight wit?</p>
   </div>
-  <div class="question" id="q3">
+  <div [style.display]="!q3Bool ? 'block':'none'" class="question" id="q3">
     <p>What do ye like to drink?</p>
   </div>
-  <div class="question" id="q4">
+  <div [style.display]="!q4Bool ? 'block':'none'" class="question" id="q4">
     <p>Did ye drink all the grog?</p>
   </div>
-  <div class="question" id="q5">
+  <div [style.display]="!q5Bool ? 'block':'none'" class="question" id="q5">
     <p>What part of the ship do ye like more?</p>
   </div>
-  <div class="question" id="q6">
+  <div [style.display]="!q6Bool ? 'block':'none'" class="question" id="q6">
     <p>What do ye call the pirate with the most booty?</p>
   </div>
-  <div class="question" id="q99">
+  <div [style.display]="!q99Bool ? 'block':'none'" class="question" id="q99">
     <p></p>
-  </div>
+  </div> <!-- This Q99 is a template of how to set up these questions -->
 
   <div id="map">
     <table>
       <tr>
         <td>
-            <div id="start"><button id="startBtn">START</button></div>
+            <div id="start"><button id="startBtn" (click)="startBtnClick()">START</button></div>
           </td>
           <td>
-            <div id="b1"><img src="{{ assetArrowRight }}"/></div>
+            <div [style.display]="!b1Bool ? 'block':'none'" id="b1"><img src="{{ assetArrowRight }}"/></div>
           </td>
           <td>
-            <div id="c1"><button id="c1Btn">YAR!</button></div>
+            <div [style.display]="!c1Bool ? 'block':'none'" id="c1"><button id="c1Btn" (click)="c1BtnClick()">YAR!</button></div>
           </td>
           <td>
-            <div id="d1"><img src="{{ assetArrowRight }}"/></div>
+            <div [style.display]="!d1Bool ? 'block':'none'" id="d1"><img src="{{ assetArrowRight }}"/></div>
           </td>
           <td>
-            <div id="e1"><button id="e1Btn">A Pistol!</button></div>
+            <div [style.display]="!e1Bool ? 'block':'none'" id="e1"><button id="e1Btn" (click)="startBtnClick()">A Pistol!</button></div>
           </td>
           <td>
-            <div id="f1"><img src="{{ assetArrowRightCurve }}"/></div>
+            <div [style.display]="!f1Bool ? 'block':'none'" id="f1"><img src="{{ assetArrowRightCurve }}"/></div>
           </td>
       </tr> <!-- end of row -->
 
       <tr>
         <td>
-          <div id="a2"><img src="{{ assetArrowDown }}"/></div>
+          <div [style.display]="!a2Bool ? 'block':'none'" id="a2"><img src="{{ assetArrowDown }}"/></div>
         </td>
         <td><div class="obstacle"><img src="{{ assetRock }}"/></div></td> <!-- ROCK -->
         <td>
-          <div id="c2"><img src="{{ assetArrowDown }}"/></div>
+          <div [style.display]="!c2Bool ? 'block':'none'" id="c2"><img src="{{ assetArrowDown }}"/></div>
         </td>
         <td><div class="obstacle"><img src="{{ assetTree }}"/></div></td> <!-- TREE -->
         <td>
-          <div id="e2"><img src="{{ assetArrowDown }}"/></div>
+          <div [style.display]="!e2Bool ? 'block':'none'" id="e2"><img src="{{ assetArrowDown }}"/></div>
         </td>
         <td>
-          <div id="f2"><img src="{{ assetArrowRightCurve }}"/></div>
+          <div [style.display]="!f2Bool ? 'block':'none'" id="f2"><img src="{{ assetArrowRightCurve }}"/></div>
         </td>
       </tr> <!-- end of row -->
 
       <tr>
         <td>
-          <div id="a3"><button id="a3Btn">NAY!</button></div>
+          <div [style.display]="!a3Bool ? 'block':'none'" id="a3"><button id="a3Btn" (click)="startBtnClick()">NAY!</button></div>
         </td>
         <td>
-          <div id="b3"><img src="{{ assetArrowRight }}"/></div>
+          <div [style.display]="!b3Bool ? 'block':'none'" id="b3"><img src="{{ assetArrowRight }}"/></div>
         </td>
         <td>
-          <div id="c3a"><button id="c3aBtn">Rum!</button></div>
-          <div id="c3b"><button id="c3bBtn">A Sword!</button></div>
+          <div [style.display]="!c3aBool ? 'block':'none'" id="c3a"><button id="c3aBtn" (click)="startBtnClick()">Rum!</button></div>
+          <div [style.display]="!c3bBool ? 'block':'none'" id="c3b"><button id="c3bBtn" (click)="startBtnClick()">A Sword!</button></div>
         </td>
         <td>
-          <div id="d3"><img src="{{ assetArrowRight }}"/></div>
+          <div [style.display]="!d3Bool ? 'block':'none'" id="d3"><img src="{{ assetArrowRight }}"/></div>
         </td>
         <td>
-          <div id="e3a"><button id="e3aBtn">Yea!</button></div>
-          <div id="e3b"><button id="e3bBtn">Starboard</button></div>
+          <div [style.display]="!e3aBool ? 'block':'none'" id="e3a"><button id="e3aBtn" (click)="startBtnClick()">Yea!</button></div>
+          <div [style.display]="!e3bBool ? 'block':'none'" id="e3b"><button id="e3bBtn" (click)="startBtnClick()">Starboard</button></div>
         </td>
         <td>
-          <div id="f3"><img src="{{ assetArrowRightCurve }}"/></div>
+          <div [style.display]="!f3Bool ? 'block':'none'" id="f3"><img src="{{ assetArrowRightCurve }}"/></div>
           </td>
         </tr> <!-- end of row -->
 
         <tr>
           <td>
-            <div id="a4"><img src="{{ assetArrowDown }}"/></div>
+            <div [style.display]="!a4Bool ? 'block':'none'" id="a4"><img src="{{ assetArrowDown }}"/></div>
           </td>
           <td><div class="obstacle"><img src="{{ assetTree }}"/></div></td> <!-- TREE -->
           <td>
-            <div id="c4"><img src="{{ assetArrowDown }}"/></div>
+            <div [style.display]="!c4Bool ? 'block':'none'" id="c4"><img src="{{ assetArrowDown }}"/></div>
           </td>
           <td><div class="obstacle"><img src="{{ assetRock }}"/></div></td> <!-- ROCK -->
           <td>
-            <div id="e4"><img src="{{ assetArrowDown }}"/></div>
+            <div [style.display]="!e4Bool ? 'block':'none'" id="e4"><img src="{{ assetArrowDown }}"/></div>
           </td>
           <td>
-            <div id="f4"><img src="{{ assetArrowRightCurve }}"/></div>
-          </td>
-        </tr> <!-- end of row -->
-
-        <tr>
-          <td>
-            <div id="a5"><button id="a5Btn">Water</button></div>
-          </td>
-          <td><div class="obstacle"><img src="{{ assetRock }}"/></div></td>
-          <td>
-            <div id="c5a"><button id="c5aBtn">Nay!</button></div>
-            <div id="c5b"><button id="c5bBtn">Port</button></div>
-          </td>
-          <td><div class="obstacle"><img src="{{ assetRock }}"/></div></td>
-          <td>
-            <div id="e5"><img src="{{ assetArrowDown }}"/></div>
-          </td>
-          <td>
-            <div id="f5"><img src="{{ assetArrowRightCurve }}"/></div>
+            <div [style.display]="!f4Bool ? 'block':'none'" id="f4"><img src="{{ assetArrowRightCurve }}"/></div>
           </td>
         </tr> <!-- end of row -->
 
         <tr>
           <td>
-            <div id="a6"><img src="{{ assetArrowRight }}"/></div>
+            <div [style.display]="!a5Bool ? 'block':'none'" id="a5"><button id="a5Btn" (click)="startBtnClick()">Water</button></div>
+          </td>
+          <td><div class="obstacle"><img src="{{ assetRock }}"/></div></td>
+          <td>
+            <div [style.display]="!c5aBool ? 'block':'none'" id="c5a"><button id="c5aBtn" (click)="startBtnClick()">Nay!</button></div>
+            <div [style.display]="!c5bBool ? 'block':'none'" id="c5b"><button id="c5bBtn" (click)="startBtnClick()">Port</button></div>
+          </td>
+          <td><div class="obstacle"><img src="{{ assetRock }}"/></div></td>
+          <td>
+            <div [style.display]="!e5Bool ? 'block':'none'" id="e5"><img src="{{ assetArrowDown }}"/></div>
           </td>
           <td>
-            <div id="b6"><img src="{{ assetArrowRight }}"/></div>
+            <div [style.display]="!f5Bool ? 'block':'none'" id="f5"><img src="{{ assetArrowRightCurve }}"/></div>
+          </td>
+        </tr> <!-- end of row -->
+
+        <tr>
+          <td>
+            <div [style.display]="!a6Bool ? 'block':'none'" id="a6"><img src="{{ assetArrowRight }}"/></div>
           </td>
           <td>
-            <div id="c6"><img src="{{ assetArrowDown }}"/></div>
+            <div [style.display]="!b6Bool ? 'block':'none'" id="b6"><img src="{{ assetArrowRight }}"/></div>
           </td>
           <td>
-            <div id="d6"><img src="{{ assetArrowLeft }}"/></div>
+            <div [style.display]="!c6Bool ? 'block':'none'" id="c6"><img src="{{ assetArrowDown }}"/></div>
           </td>
           <td>
-            <div id="e6"><img src="{{ assetArrowLeft }}"/></div>
+            <div [style.display]="!d6Bool ? 'block':'none'" id="d6"><img src="{{ assetArrowLeft }}"/></div>
+          </td>
+          <td>
+            <div [style.display]="!e6Bool ? 'block':'none'" id="e6"><img src="{{ assetArrowLeft }}"/></div>
           </td> 
           <td>
-            <div id="f6"><img src="{{ assetArrowLeft }}"/></div>
+            <div [style.display]="!f6Bool ? 'block':'none'" id="f6"><img src="{{ assetArrowLeft }}"/></div>
           </td>
         </tr><!-- end of row -->
 
@@ -153,11 +153,11 @@
 
   </div><!-- end of div map -->
 
-  <div class="result" id="res1"><p>Ye be a Landlubber!</p></div>
-  <div class="result" id="res2"><p>Ye be a Captain!</p></div>
-  <div class="result" id="res3"><p>Ye be a Crewman!</p></div>
-  <div class="result" id="res4"><p>Ye be a Carcass!</p></div>
-  <div class="result" id="res5"><p>Ye be a Cabin Boy!</p></div>
+  <div [style.display]="!res1Bool ? 'block':'none'" class="result" id="res1"><p>Ye be a Landlubber!</p></div>
+  <div [style.display]="!res2Bool ? 'block':'none'" class="result" id="res2"><p>Ye be a Captain!</p></div>
+  <div [style.display]="!res3Bool ? 'block':'none'" class="result" id="res3"><p>Ye be a Crewman!</p></div>
+  <div [style.display]="!res4Bool ? 'block':'none'" class="result" id="res4"><p>Ye be a Carcass!</p></div>
+  <div [style.display]="!res5Bool ? 'block':'none'" class="result" id="res5"><p>Ye be a Cabin Boy!</p></div>
 
 </body>
 

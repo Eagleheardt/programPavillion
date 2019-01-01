@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PiratesortComponent implements OnInit {
 
+  // asset images
+
   assetArrowDown: string = "assets/challenges/piratesort/arrowDown.png";
   assetArrowLeft: string = "assets/challenges/piratesort/arrowLeft.png";
   assetArrowRight: string = "assets/challenges/piratesort/arrowRight.png";
@@ -14,10 +16,116 @@ export class PiratesortComponent implements OnInit {
   assetRock: string = "assets/challenges/piratesort/rock.png";
   assetTree: string = "assets/challenges/piratesort/tree.png";
 
+  // div booleans - control display of their respective divs
+  b1Bool: boolean = true;
+  d1Bool: boolean = true;
+  f1Bool: boolean = true;
+  a2Bool: boolean = true;
+  c2Bool: boolean = true;
+  e2Bool: boolean = true;
+  f2Bool: boolean = true;
+  b3Bool: boolean = true;
+  d3Bool: boolean = true;
+  f3Bool: boolean = true;
+  a4Bool: boolean = true;
+  c4Bool: boolean = true;
+  e4Bool: boolean = true;
+  f4Bool: boolean = true;
+  e5Bool: boolean = true;
+  f5Bool: boolean = true;
+  a6Bool: boolean = true;
+  b6Bool: boolean = true;
+  c6Bool: boolean = true;
+  d6Bool: boolean = true;
+  e6Bool: boolean = true;
+  f6Bool: boolean = true;
+
+  // button booleans
+  startBtnBool: boolean = true;
+  c1Bool: boolean = true;
+  e1Bool: boolean = true;
+  a3Bool: boolean = true;
+  c3aBool: boolean = true;
+  c3bBool: boolean = true;
+  e3aBool: boolean = true;
+  e3bBool: boolean = true;
+  a5Bool: boolean = true;
+  c5aBool: boolean = true;
+  c5bBool: boolean = true;
+
+  // question booleans
+  q0Bool: boolean = true;
+  q1Bool: boolean = true;
+  q2Bool: boolean = true;
+  q3Bool: boolean = true;
+  q4Bool: boolean = true;
+  q5Bool: boolean = true;
+  q6Bool: boolean = true;
+  q99Bool: boolean = true;
+
+  // results booleans
+  res1Bool: boolean = true;
+  res2Bool: boolean = true;
+  res3Bool: boolean = true;
+  res4Bool: boolean = true;
+  res5Bool: boolean = true;
+
+  // setting methods
+
+  addOpenByID(someID: string) {
+	document.getElementById(someID).classList.add('open');
+  }
+
+  disableByID(someID: string) {
+	(<HTMLInputElement> document.getElementById(someID)).disabled = true; // angular way to disable an item
+  }
+
+  redOffButton(someID) {
+	this.disableByID(someID);
+	document.getElementById(someID).style.backgroundColor = "red";
+	document.getElementById(someID).style.color = "red";
+  }
+
+  turnOffQuestions(){
+	this.q0Bool = false;
+	this.q1Bool = true;
+	this.q2Bool = true;
+	this.q3Bool = true;
+	this.q4Bool = true;
+	this.q5Bool = true;
+	this.q6Bool = true;
+	this.q99Bool = true;
+	}
+
+  // button click methods
+
+  startBtnClick() {
+	this.turnOffQuestions();
+	this.redOffButton('startBtn');
+	
+	this.b1Bool = false;
+	this.a2Bool = false;
+	this.a3Bool = false;
+	this.c1Bool = false;
+	this.q1Bool = false;
+  }
+
+  c1BtnClick() {
+	this.turnOffQuestions();
+	this.redOffButton('c1Btn');
+	this.disableByID('a3Btn');
+
+	this.c2Bool = false;
+	this.c3bBool = false;
+	this.d1Bool = false;
+	this.e1Bool = false;
+	this.q2Bool = false;
+  }
+
   constructor() { }
 
   ngOnInit() {
-  }
+  } // end onInit
   
 /* RAW JS from project */
         

@@ -18,11 +18,10 @@ export class HomeslideshowComponent implements OnInit {
     'assets/homeslideshow/sqlite.png'
   ];
 
-
-
   constructor(private swiper: SwiperModule) { }
 
   ngOnInit() {
+    
   }
 
 }

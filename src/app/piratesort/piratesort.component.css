@@ -74,12 +74,7 @@ div div.open{
 }
 
 div.question{
-	display: none;
 	text-align:center;
-}
-
-div.question.open{
-	display:block;
 }
 
 div#start{
@@ -91,18 +86,9 @@ div div.obstacle{
 }
 
 div.result{
-	display:none;
 	text-align:center;
 }
 
-div.result.open{
-	display:block;
-}
-/*
-div.result#res1{
-	display:block;
-}
-*/
 footer {
   bottom: 20px;
   left:100px;
