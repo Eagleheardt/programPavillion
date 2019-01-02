@@ -26,6 +26,7 @@ import { ChallengesComponent } from './challenges/challenges.component';
 import { NavmediaComponent } from './navmedia/navmedia.component';
 import { Decorbar1Component } from './decorbar1/decorbar1.component';
 import { HomeslideshowComponent } from './homeslideshow/homeslideshow.component';
+import { WordsComponent } from './words/words.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { HomeslideshowComponent } from './homeslideshow/homeslideshow.component'
     ChallengesComponent,
     NavmediaComponent,
     Decorbar1Component,
-    HomeslideshowComponent
+    HomeslideshowComponent,
+    WordsComponent
   ],
   imports: [
     BrowserModule,

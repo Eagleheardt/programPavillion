@@ -156,208 +156,95 @@ export class PiratesortComponent implements OnInit {
 
   c3aBtnClick() {
 	this.turnOffQuestions();
-	this.redOffButton('c1Btn');
-	this.disableByID('a3Btn');
+	this.redOffButton('c3aBtn');
+	this.disableByID('a5Btn');
 
-	this.c2Bool = false;
-	this.c3bBool = false;
-	this.d1Bool = false;
-	this.e1Bool = false;
-	this.q2Bool = false;
+	this.c4Bool = false;
+	this.c5aBool = false;
+	this.d3Bool = false;
+	this.e3aBool = false;
+	this.q4Bool = false;
   }
 
   c3bBtnClick() {
 	this.turnOffQuestions();
-	this.redOffButton('c1Btn');
-	this.disableByID('a3Btn');
+	this.redOffButton('c3bBtn');
+	this.disableByID('e1Btn');
 
-	this.c2Bool = false;
-	this.c3bBool = false;
-	this.d1Bool = false;
+	this.c4Bool = false;
+	this.c5bBool = false;
+	this.d3Bool = false;
+	this.e3bBool = false;
 	this.e1Bool = false;
-	this.q2Bool = false;
+	this.q5Bool = false;
   }
-/* 
-  c1BtnClick() {
+
+  e3aBtnClick() {
 	this.turnOffQuestions();
-	this.redOffButton('c1Btn');
-	this.disableByID('a3Btn');
+	this.redOffButton('e3aBtn');
+	this.disableByID('c5aBtn');
 
-	this.c2Bool = false;
-	this.c3bBool = false;
-	this.d1Bool = false;
-	this.e1Bool = false;
-	this.q2Bool = false;
+	this.e4Bool = false;
+	this.e5Bool = false;
+	this.e6Bool = false;
+	this.d6Bool = false;
+	this.c6Bool = false;
+	this.q99Bool = false;
+	this.res4Bool = false;
   }
- */
+
+  e3bBtnClick() {
+	this.turnOffQuestions();
+	this.redOffButton('e3bBtn');
+	this.disableByID('c5bBtn');
+
+	this.e4Bool = false;
+	this.e5Bool = false;
+	this.e6Bool = false;
+	this.d6Bool = false;
+	this.c6Bool = false;
+	this.q99Bool = false;
+	this.res5Bool = false;
+  }
+
+  a5BtnClick() {
+	this.turnOffQuestions();
+	this.redOffButton('a5Btn');
+	this.disableByID('c3aBtn');
+
+	this.a6Bool = false;
+	this.b6Bool = false;
+	this.c6Bool = false;
+	this.q99Bool = false;
+	this.c6Bool = false;
+	this.q99Bool = false;
+	this.res4Bool = false;
+  }
+
+  c5aBtnClick() {
+	this.turnOffQuestions();
+	this.redOffButton('c5aBtn');
+	this.disableByID('e3aBtn');
+
+	this.c6Bool = false;
+	this.q99Bool = false;
+	this.res3Bool = false;
+  }
+
+  c5bBtnClick() {
+	this.turnOffQuestions();
+	this.redOffButton('c5bBtn');
+	this.disableByID('e3bBtn');
+
+	this.c6Bool = false;
+	this.q99Bool = false;
+	this.res3Bool = false;
+
+  }
   constructor() { }
 
   ngOnInit() {
   } // end onInit
-  
-/* RAW JS from project */
-        
-  
-/*
-var vols = document.querySelectorAll('.prs');
-
-for(var i = 0, l = vols.length; i < l; i++) {
-	vols[i].onclick = function(a) {
-		a.preventDefault();
-		document.querySelector('.result').classList.toggle('open');
-	}
-}
-*/
-
-/* var hideQuestions = function () {
-	var questions = document.querySelectorAll('.question')
-	for(var i = 0, l = questions.length; i < l; i++) {
-		questions[i].classList.remove('open');
-	}
-}
-
-var showByID = function (someID) {
-	document.getElementById(someID).classList.add('open');
-}
-
-var disableButton = function (someID) {
-	document.getElementById(someID).style.display = "none";
-}
-
-var onRed = function (someID) {
-	document.getElementById(someID).disabled = true;
-	document.getElementById(someID).style.display = "block";
-	document.getElementById(someID).style.backgroundColor = "red";
-	document.getElementById(someID).style.color = "red";
-}
-
-document.getElementById('startBtn').onclick = function() {
-	hideQuestions();
-	showByID('b1');
-	showByID('a2');
-	showByID('a3');
-	showByID('c1');
-	showByID('q1');
-	onRed('startBtn');
-}
-
-document.getElementById('c1').onclick = function() {
-	hideQuestions();
-	showByID('c2');
-	showByID('c3b');
-	showByID('d1');
-	showByID('e1');
-	showByID('q2');
-	onRed('c1Btn');
-	disableButton('a3Btn');
-}
-
-document.getElementById('a3').onclick = function() {
-	hideQuestions();
-	showByID('a4');
-	showByID('a5');
-	showByID('b3');
-	showByID('c3a');
-	showByID('q3');
-	disableButton('a3Btn');
-	disableButton('c1Btn');
-	onRed('a3Btn')
-}
-
-document.getElementById('a5').onclick = function() {
-	hideQuestions();
-	showByID('a6');
-	showByID('b6');
-	showByID('c6');
-	showByID('q99');
-	showByID('res4');
-	disableButton('c3aBtn');
-	onRed('a5Btn');
-};
-
-document.getElementById('c3a').onclick = function() {
-	hideQuestions();
-	showByID('c4');
-	showByID('c5a');
-	showByID('d3');
-	showByID('e3a');
-	showByID('q4');
-	onRed('c3aBtn');
-	disableButton('a5Btn');
-}
-
-document.getElementById('c5a').onclick = function() {
-	hideQuestions();
-	showByID('c6');
-	showByID('q99');
-	onRed('c5aBtn');
-	disableButton('e3aBtn');
-	showByID('res3');
-}
-
-document.getElementById('c3b').onclick = function() {
-	hideQuestions();
-	showByID('c4');
-	showByID('c5b');
-	showByID('d3');
-	showByID('e3b');
-	showByID('e1');
-	showByID('q5');
-	onRed('c3bBtn');
-	disableButton('e1Btn');
-}
-
-document.getElementById('c5b').onclick = function() {
-	hideQuestions();
-	showByID('c6');
-	showByID('q99');
-	onRed('c5bBtn');
-	disableButton('e3bBtn');
-	showByID('res3');
-}
-
-document.getElementById('e1').onclick = function() {
-	hideQuestions();
-	showByID('f1');
-	showByID('f2');
-	showByID('f3');
-	showByID('f4');
-	showByID('f5');
-	showByID('f6');
-	showByID('e6');
-	showByID('d6');
-	showByID('c6');
-	showByID('q99');
-	onRed('e1Btn');
-	disableButton('c3bBtn');
-	showByID('res2');
-}
-
-document.getElementById('e3a').onclick = function() {
-	hideQuestions();
-	showByID('e4');
-	showByID('e5');
-	showByID('e6');
-	showByID('d6');
-	showByID('c6');
-	showByID('q99');
-	disableButton('c5aBtn');
-	onRed('e3aBtn');
-	showByID('res4');
-}
-
-document.getElementById('e3b').onclick = function() {
-	hideQuestions();
-	showByID('e4');
-	showByID('e5');
-	showByID('e6');
-	showByID('d6');
-	showByID('c6');
-	showByID('q99');
-	disableButton('c5bBtn');
-	onRed('e3bBtn');
-	showByID('res5');
-} */
 }
 
 
