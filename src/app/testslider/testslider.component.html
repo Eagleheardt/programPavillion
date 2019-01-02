@@ -1,0 +1,25 @@
+<div id="container">
+  <div
+    ng2-carouselamos
+    class="slides-wrapper"
+    [items]="items"
+    [width]="250"
+    [$prev]="prev"
+    [$next]="next"
+    [$item]="item"
+  >
+</div>
+
+<ng-template #prev>
+  <i class="fa fa-4x fa-caret-left" id="left"></i>
+</ng-template>
+<ng-template #next>
+  <i class="fa fa-4x fa-caret-right" id="right"></i>
+</ng-template>
+<ng-template #item let-item let-i="index">
+
+  <div class="items">
+    <img src="{{ item }}">
+  </div>
+
+</ng-template>

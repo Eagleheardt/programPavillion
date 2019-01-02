@@ -26,7 +26,8 @@ import { ChallengesComponent } from './challenges/challenges.component';
 import { NavmediaComponent } from './navmedia/navmedia.component';
 import { Decorbar1Component } from './decorbar1/decorbar1.component';
 import { HomeslideshowComponent } from './homeslideshow/homeslideshow.component';
-import { WordsComponent } from './words/words.component';
+import { TestsliderComponent } from './testslider/testslider.component';
+import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { WordsComponent } from './words/words.component';
     NavmediaComponent,
     Decorbar1Component,
     HomeslideshowComponent,
-    WordsComponent
+    TestsliderComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +60,8 @@ import { WordsComponent } from './words/words.component';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserModule,
-    SwiperModule
+    SwiperModule,
+    Ng2CarouselamosModule
   ],
   providers: [
     Title

@@ -1,0 +1,16 @@
+#container {
+    width: 60%;
+    margin: 5em auto;
+    padding: 0;
+    background:white;
+    height: 150px;
+}
+
+.items {
+    max-width:80%;
+    background:black;
+}
+
+#left, #right { 
+    margin: 30px;
+}
