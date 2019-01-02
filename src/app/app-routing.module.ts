@@ -21,16 +21,11 @@ import { MinesweeperComponent } from './minesweeper/minesweeper.component';
 import { MadnessComponent } from './madness/madness.component';
 import { PiratesortComponent } from './piratesort/piratesort.component';
 
-
-
-/* const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'about', component: AboutComponent},
-  {path: 'contact', component: ContactComponent},
-  {path: 'personal', component: PersonalComponent},
-  {path: 'professional', component: ProfessionalComponent},
-  {path: 'blog', component: BlogComponent}
-]; */
+/*
+************************************
+******* Beginning of Routes  *******
+************************************
+*/
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -57,9 +52,10 @@ const routes: Routes = [
 
 
 ];
+
 /*
 ************************************
-************  End of Routes  *******
+************* End of Routes ********
 ************************************
 */
 
