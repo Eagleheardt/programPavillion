@@ -141,43 +141,43 @@ export class PiratesortComponent implements OnInit {
 	this.q99Bool = false;
 	this.res2Bool = false;
   }
+
+  a3BtnClick() {
+	this.turnOffQuestions();
+	this.redOffButton('a3Btn');
+	this.disableByID('c1Btn');
+
+	this.a4Bool = false;
+	this.a5Bool = false;
+	this.b3Bool = false;
+	this.c3aBool = false;
+	this.q3Bool = false;
+  }
+
+  c3aBtnClick() {
+	this.turnOffQuestions();
+	this.redOffButton('c1Btn');
+	this.disableByID('a3Btn');
+
+	this.c2Bool = false;
+	this.c3bBool = false;
+	this.d1Bool = false;
+	this.e1Bool = false;
+	this.q2Bool = false;
+  }
+
+  c3bBtnClick() {
+	this.turnOffQuestions();
+	this.redOffButton('c1Btn');
+	this.disableByID('a3Btn');
+
+	this.c2Bool = false;
+	this.c3bBool = false;
+	this.d1Bool = false;
+	this.e1Bool = false;
+	this.q2Bool = false;
+  }
 /* 
-  c1BtnClick() {
-	this.turnOffQuestions();
-	this.redOffButton('c1Btn');
-	this.disableByID('a3Btn');
-
-	this.c2Bool = false;
-	this.c3bBool = false;
-	this.d1Bool = false;
-	this.e1Bool = false;
-	this.q2Bool = false;
-  }
-
-  c1BtnClick() {
-	this.turnOffQuestions();
-	this.redOffButton('c1Btn');
-	this.disableByID('a3Btn');
-
-	this.c2Bool = false;
-	this.c3bBool = false;
-	this.d1Bool = false;
-	this.e1Bool = false;
-	this.q2Bool = false;
-  }
-
-  c1BtnClick() {
-	this.turnOffQuestions();
-	this.redOffButton('c1Btn');
-	this.disableByID('a3Btn');
-
-	this.c2Bool = false;
-	this.c3bBool = false;
-	this.d1Bool = false;
-	this.e1Bool = false;
-	this.q2Bool = false;
-  }
-
   c1BtnClick() {
 	this.turnOffQuestions();
 	this.redOffButton('c1Btn');
