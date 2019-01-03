@@ -1,8 +1,8 @@
 nav {
     max-width: 10%;
-    float: right;
     position: absolute;
     right:30px;
+    top:40%;
 }
 nav h4 {
     background: purple;
