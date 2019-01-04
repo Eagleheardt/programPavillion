@@ -26,7 +26,6 @@ import { ChallengesComponent } from './challenges/challenges.component';
 import { NavmediaComponent } from './navmedia/navmedia.component';
 import { Decorbar1Component } from './decorbar1/decorbar1.component';
 import { HomeslideshowComponent } from './homeslideshow/homeslideshow.component';
-import { TestsliderComponent } from './testslider/testslider.component';
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 import { Testslider2Component } from './testslider2/testslider2.component';
 
@@ -53,7 +52,6 @@ import { Testslider2Component } from './testslider2/testslider2.component';
     NavmediaComponent,
     Decorbar1Component,
     HomeslideshowComponent,
-    TestsliderComponent,
     Testslider2Component
   ],
   imports: [
@@ -62,8 +60,7 @@ import { Testslider2Component } from './testslider2/testslider2.component';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserModule,
-    SwiperModule,
-    Ng2CarouselamosModule
+    SwiperModule
   ],
   providers: [
     Title
