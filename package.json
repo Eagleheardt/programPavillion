@@ -1,6 +1,6 @@
 {
-  "name": "programPavilion",
-  "version": "0.0.0",
+  "name": "programpavilion",
+  "version": "0.0.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -54,5 +54,24 @@
     "tslint": "~5.11.0",
     "typescript": "~3.1.6",
     "webpack-dev-server": "^3.1.14"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eagleheardt/programPavillion.git"
+  },
+  "keywords": [
+    "angular",
+    "sql",
+    "javascript",
+    "front",
+    "end"
+  ],
+  "author": "Pirate Pete",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eagleheardt/programPavillion/issues"
+  },
+  "homepage": "https://github.com/Eagleheardt/programPavillion#readme"
 }
