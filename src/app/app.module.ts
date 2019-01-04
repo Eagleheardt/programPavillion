@@ -28,6 +28,7 @@ import { Decorbar1Component } from './decorbar1/decorbar1.component';
 import { HomeslideshowComponent } from './homeslideshow/homeslideshow.component';
 import { TestsliderComponent } from './testslider/testslider.component';
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
+import { Testslider2Component } from './testslider2/testslider2.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { Ng2CarouselamosModule } from 'ng2-carouselamos';
     NavmediaComponent,
     Decorbar1Component,
     HomeslideshowComponent,
-    TestsliderComponent
+    TestsliderComponent,
+    Testslider2Component
   ],
   imports: [
     BrowserModule,
