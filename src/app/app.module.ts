@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SwiperModule } from 'angular2-useful-swiper';
+import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,8 +29,8 @@ import { ChallengesComponent } from './challenges/challenges.component';
 import { NavmediaComponent } from './navmedia/navmedia.component';
 import { Decorbar1Component } from './decorbar1/decorbar1.component';
 import { HomeslideshowComponent } from './homeslideshow/homeslideshow.component';
-import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 import { Testslider2Component } from './testslider2/testslider2.component';
+import { CarouselBasicComponent } from './carousel-basic/carousel-basic.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +55,8 @@ import { Testslider2Component } from './testslider2/testslider2.component';
     NavmediaComponent,
     Decorbar1Component,
     HomeslideshowComponent,
-    Testslider2Component
+    Testslider2Component,
+    CarouselBasicComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +64,10 @@ import { Testslider2Component } from './testslider2/testslider2.component';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserModule,
-    SwiperModule
+    SwiperModule,
+    NgbCarouselModule,
+    Ng2CarouselamosModule,
+    NgbModule
   ],
   providers: [
     Title
