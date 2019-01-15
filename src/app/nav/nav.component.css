@@ -82,5 +82,5 @@ header nav ul li a:hover {
   .dropdown:hover .dropdown-content {
       transition: all 750ms;
       border: solid black thin;
-      max-height:300px;
+      max-height:600px;
     }
