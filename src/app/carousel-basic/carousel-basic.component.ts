@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-testslider2',
-  templateUrl: './testslider2.component.html',
-  styleUrls: ['./testslider2.component.css']
+  selector: 'app-carousel-basic',
+  templateUrl: './carousel-basic.component.html',
+  styleUrls: ['./carousel-basic.component.css']
 })
-export class Testslider2Component implements OnInit {
-  
+export class CarouselBasicComponent implements OnInit {
+
   items: string [] = [
     'assets/homeslideshow/html.png',
     'assets/homeslideshow/css.png',
@@ -16,6 +16,8 @@ export class Testslider2Component implements OnInit {
     'assets/homeslideshow/ubuntu.png',
     'assets/homeslideshow/sqlite.png'
   ];
+
+  images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
 
   constructor() { }
 
