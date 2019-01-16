@@ -57,11 +57,8 @@ import { CarouselBasicComponent } from './carousel-basic/carousel-basic.componen
     Decorbar1Component,
     HomeslideshowComponent,
     Testslider2Component,
-<<<<<<< HEAD
-    PiratepokerComponent
-=======
+    PiratepokerComponent,
     CarouselBasicComponent
->>>>>>> f5398e92497bfccdb808fdebdb2a3084c5979828
   ],
   imports: [
     BrowserModule,

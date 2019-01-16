@@ -2,14 +2,11 @@ import { Card } from './card';
 
 export class Deck {
     
-    private cards: Card[] = [];
-    
-
+    private cards: Card[] = [
+        
+    ];
         
     public getCard() {
-        private randIndex: number = this.cards[Math.floor(Math.random() * this.cards.length)];
-
-        return cards(randIndex);
+        return this.cards[(Math.floor(Math.random() * this.cards.length))];
     }
-
 }
