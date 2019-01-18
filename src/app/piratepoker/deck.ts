@@ -4,7 +4,7 @@ export class Deck {
     
     private cards: Card[] = [
         // Spades
-        new Card ('./cardPics/3_of_hearts.png','Spade','A',100),
+        new Card ('./cardPics/ace_of_spades.png','Spade','A',100),
         new Card ('./cardPics/king_of_spades2.png','Spade','K',90),
         new Card ('./cardPics/queen_of_spades2.png','Spade','Q',80),
         new Card ('./cardPics/jack_of_spades2.png','Spade','J',70),

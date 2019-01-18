@@ -12,6 +12,10 @@ export class Card {
         this._value = value
     }
 
+    public suit(){
+        return this._suit;
+    }
+
     public isDelt() {
         return this._isDelt;
     }
