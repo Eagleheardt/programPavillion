@@ -1,19 +1,22 @@
 export class Card {
-    private image: string;
-    private suit: string;
-    private number: string;
-    private value: number;
-    private isDelt: boolean;
+    private _image: string;
+    private _suit: string;
+    private _number: string;
+    private _value: number;
+    private _isDelt: boolean = false;
 
     constructor(image, suit, number, value) { 
-        this.image = image
-        this.suit = suit
-        this.number = number
-        this.value = value
-        this.isDelt = false;
+        this._image = image
+        this._suit = suit
+        this._number = number
+        this._value = value
     }
 
-    public delt() {
-        return this.isDelt;
+    public isDelt() {
+        return this._isDelt;
+    }
+
+    public dealOut(){
+        this._isDelt = true;
     }
 }
