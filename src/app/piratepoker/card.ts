@@ -19,4 +19,8 @@ export class Card {
     public dealOut(){
         this._isDelt = true;
     }
+
+    public putBack(){
+        this._isDelt = false;
+    }
 }
