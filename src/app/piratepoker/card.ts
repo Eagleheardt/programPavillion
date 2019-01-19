@@ -12,7 +12,7 @@ export class Card {
         this._value = value
     }
 
-    public isDelt() {
+    get isDelt(): boolean {
         return this._isDelt;
     }
 

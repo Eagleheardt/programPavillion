@@ -4,7 +4,7 @@ export class Deck {
     
     private cards: Card[] = [
         // Spades
-        new Card ('./cardPics/3_of_hearts.png','Spade','A',100),
+        new Card ('./cardPics/ace_of_spades.png','Spade','A',100),
         new Card ('./cardPics/king_of_spades2.png','Spade','K',90),
         new Card ('./cardPics/queen_of_spades2.png','Spade','Q',80),
         new Card ('./cardPics/jack_of_spades2.png','Spade','J',70),
@@ -62,19 +62,19 @@ export class Deck {
         // end of suits, optional 2 jokers below?
     ];
         
-    public getCard() {
+    public getCard(): Card {
 
         var ranIndex = (Math.floor(Math.random() * this.cards.length));
         var aCard = this.cards[ranIndex];
 
-        if (!aCard.isDelt()) {
+        if (!aCard.isDelt) {
             this.getCard();
         }
         aCard.dealOut();
         return aCard;
     }
 
-    public shuffle(){
+    public shuffle() {
         this.cards.forEach(aCard => {
             aCard.putBack();
         });
