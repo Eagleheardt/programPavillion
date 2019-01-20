@@ -12,6 +12,22 @@ export class Card {
         this._value = value
     }
 
+    get image(): string {
+        return this._image;
+    }
+
+    get suit(): string {
+        return this._suit;
+    }
+
+    get number(): string {
+        return this._number;
+    }
+
+    get value(): number{
+        return this._value;
+    }
+
     get isDelt(): boolean {
         return this._isDelt;
     }

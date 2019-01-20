@@ -6,6 +6,7 @@ export class Player {
     private _bet: number;
     private _bags: number;
     private _difficulty: number;
+    private _used: boolean;
 
     public giveCard(aCard){
         this._hand.push(aCard);
@@ -43,10 +44,18 @@ export class Player {
         return this._difficulty;
     }
 
-    constructor(aName: string, aDifficulty: number){
+    get used(): boolean {
+        return this._used;
+    }
+
+    set used(isUsed: boolean) {
+        this._used = isUsed;
+    }
+
+    constructor(aName: string, aDifficulty: number = 0){
         this._name = aName;
         this._difficulty = aDifficulty;
         this._bags = 0;
+        this._used = false;
     }
-
 }
