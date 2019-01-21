@@ -21,7 +21,11 @@ export class Player {
     }
 
     set name(newName:string) {
-        this._name = newName;
+        
+        if (newName == ''){
+            this._name = 'Default';
+        }
+        else { this._name = newName;; }
     }
 
     get bet(): number{
@@ -29,7 +33,11 @@ export class Player {
     }
 
     set bet(newBet: number) {
-        this._bet = newBet;
+        if (newBet < 0){
+            this._bet = 0
+        }
+        else { this._bet = newBet; }
+        
     }
 
     get bags(): number {

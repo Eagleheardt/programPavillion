@@ -6,7 +6,9 @@ export class Game {
     private _deck: Deck;
     private _roundNumber: number;
     private _targetScore: number;
+    private _currentScore: number;
     private _humanPlayer: Player;
+    private _winner: Player;
 
     private cpuPlayers: Player[] = [
         new Player('Chris', 1),
@@ -37,6 +39,26 @@ export class Game {
         this._targetScore = maxScore;
     }
 
+    get currentScore(): number{
+        return this._currentScore
+    }
+
+    set currentScore(aScore: number){
+        this._currentScore = aScore;
+    }
+
+    get winner(): Player{
+        return this._winner;
+    }
+
+    set winner(aWinner: Player){
+        this._winner = aWinner;
+    }
+
+    public addScore(aScore: number){
+        this._currentScore += aScore;
+    }
+
     public dealCards(arrayOfPlayers: Player[]){
         arrayOfPlayers.forEach(person => {
             person.giveCard(this._deck.getCard());
@@ -55,20 +77,32 @@ export class Game {
         else { this.addCPU(); }
     }
 
-    public addCPUs(){
+    private addCPUs(){
         for (var i = 0; i < 3; i++){
             this.addCPU();
         }
     }
 
-    public playGame(){
-        // need to get the player's name
+    public playRound(){
+        this.addRound();
 
-        // add the players to their array
+
+    }
+
+    public playGame(){
+        // TODO get the player's name
+
+        // adding the players to their array
 
         this._players.push(this._humanPlayer);
         this.addCPUs();
+
+        // set round
         this._roundNumber = 1;
+
+        while (this._currentScore < this._targetScore) {
+            
+        }
 
     }
 }
