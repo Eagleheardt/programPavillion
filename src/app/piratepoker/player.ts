@@ -25,7 +25,7 @@ export class Player {
         if (newName == ''){
             this._name = 'Default';
         }
-        else { this._name = newName;; }
+        else { this._name = newName; }
     }
 
     get bet(): number{
