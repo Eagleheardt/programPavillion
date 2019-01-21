@@ -1,5 +1,6 @@
 import { Player } from './player'
 import { Deck } from './deck';
+import { Card } from './card';
 
 export class Game {
     private _players: Player[] = [];
@@ -9,6 +10,7 @@ export class Game {
     private _currentScore: number;
     private _humanPlayer: Player;
     private _winner: Player;
+    public tableHand: Card[];
 
     private cpuPlayers: Player[] = [
         new Player('Chris', 1),
@@ -27,7 +29,7 @@ export class Game {
         return this._roundNumber;
     }
 
-    public addRound(){
+    private addRound(){
         this._roundNumber ++;
     }
 
@@ -59,9 +61,23 @@ export class Game {
         this._currentScore += aScore;
     }
 
-    public dealCards(arrayOfPlayers: Player[]){
+    private dealCards(arrayOfPlayers: Player[]){
         arrayOfPlayers.forEach(person => {
-            person.giveCard(this._deck.getCard());
+            for (var i = 0; i < 13; i++){
+                person.giveCard(this._deck.getCard());
+            }// end dealing 13 cards to a player
+        }); // end forEach
+    }
+
+    private clearHands(){
+        this._players.forEach(element => {
+            element.discard();
+        });
+    }
+
+    private clearTable(){
+        this.tableHand.forEach(element => {
+            this.tableHand.pop();            
         });
     }
 
@@ -83,14 +99,32 @@ export class Game {
         }
     }
 
-    public playRound(){
+    public getPlayerCard(){
+
+    }
+
+    private setCards(){
+
+    }
+
+    private playRound(lastPlayer: number){
+
+        this.clearTable();
+        this.clearHands();
+
+        this.dealCards(this._players);
+
+
+
+
+
+
         this.addRound();
-
-
     }
 
     public playGame(){
         // TODO get the player's name
+        var lastIndex: number = 0;
 
         // adding the players to their array
 
@@ -101,8 +135,7 @@ export class Game {
         this._roundNumber = 1;
 
         while (this._currentScore < this._targetScore) {
-            
+            //this.playRound();            
         }
-
     }
 }

@@ -60,6 +60,12 @@ export class Player {
         this._used = isUsed;
     }
 
+    public discard(){
+        this._hand.forEach(element => {
+            this._hand.pop();            
+        });
+    }
+
     constructor(aName: string, aDifficulty: number = 0){
         this._name = aName;
         this._difficulty = aDifficulty;
