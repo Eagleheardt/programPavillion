@@ -3,7 +3,7 @@ import { Deck } from './deck';
 
 export class Game {
     private _players: Player[] = [];
-    private _playerOrder: Player[] = [];
+    private _playerOrder: number[] = [];
     private _deck: Deck;
     private _roundNumber: number;
     private _targetScore: number;
@@ -84,8 +84,16 @@ export class Game {
         }
     }
 
+    private shufflePlayers(){
+        var lastPlayer:number = this._playerOrder.shift();
+        this._playerOrder.push(lastPlayer);
+    }
+
     public playRound(){
 
+
+
+        this.shufflePlayers()
         this.addRound();
     }
 
