@@ -3,6 +3,7 @@ import { Deck } from './deck';
 
 export class Game {
     private _players: Player[] = [];
+    private _playerOrder: Player[] = [];
     private _deck: Deck;
     private _roundNumber: number;
     private _targetScore: number;
@@ -84,9 +85,8 @@ export class Game {
     }
 
     public playRound(){
+
         this.addRound();
-
-
     }
 
     public playGame(){
@@ -101,7 +101,7 @@ export class Game {
         this._roundNumber = 1;
 
         while (this._currentScore < this._targetScore) {
-            
+            this.playRound();            
         }
 
     }
