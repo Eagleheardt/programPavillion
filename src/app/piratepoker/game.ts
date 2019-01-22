@@ -4,6 +4,7 @@ import { Card } from './card';
 
 export class Game {
     private _players: Player[] = [];
+    private _playerOrder: number[] = [];
     private _deck: Deck;
     private _roundNumber: number;
     private _targetScore: number;
@@ -107,7 +108,7 @@ export class Game {
 
     }
 
-    private playRound(lastPlayer: number){
+    private playRound(){
 
         this.clearTable();
         this.clearHands();
@@ -135,7 +136,7 @@ export class Game {
         this._roundNumber = 1;
 
         while (this._currentScore < this._targetScore) {
-            //this.playRound();            
+            this.playRound();            
         }
     }
 }
