@@ -11,7 +11,7 @@ export class Game {
     private _currentScore: number;
     private _humanPlayer: Player;
     private _winner: Player;
-    public tableHand: Card[];
+    private _tableHand: Card[];
 
     private cpuPlayers: Player[] = [
         new Player('Chris', 1),
@@ -77,8 +77,8 @@ export class Game {
     }
 
     private clearTable(){
-        this.tableHand.forEach(element => {
-            this.tableHand.pop();            
+        this._tableHand.forEach(element => {
+            this._tableHand.pop();            
         });
     }
 
@@ -95,7 +95,7 @@ export class Game {
     }
 
     private addCPUs(){
-        for (var i = 0; i < 3; i++){
+        for (var i = 0; i < 4; i++){
             this.addCPU();
         }
     }
@@ -108,17 +108,21 @@ export class Game {
 
     }
 
-    private playRound(){
+    public playRound(){
 
         this.clearTable();
         this.clearHands();
 
         this.dealCards(this._players);
 
-
-
-
-
+        this._players.forEach(player => {
+            
+            console.log(player.name)
+                player.hand.forEach(card => {
+                    console.log(card.toString())
+                });
+            
+        });
 
         this.addRound();
     }
@@ -138,5 +142,12 @@ export class Game {
         while (this._currentScore < this._targetScore) {
             this.playRound();            
         }
+    }
+
+    constructor (){
+
+        this.addCPUs();
+        this.dealCards(this._players);
+
     }
 }

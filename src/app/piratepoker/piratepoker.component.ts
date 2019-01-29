@@ -8,11 +8,15 @@ import { Game } from './game';
 })
 export class PiratepokerComponent implements OnInit {
 
-  constructor(private game: Game) { 
+  constructor() { 
+    
     
   }
 
   ngOnInit() {
+    var game: Game;
+    console.log('Test Print!!');
+    game.playRound();
   }
 
 }

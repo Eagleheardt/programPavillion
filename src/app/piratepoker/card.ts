@@ -12,6 +12,11 @@ export class Card {
         this._value = value
     }
 
+    public toString(): string{
+        var theString: string = "The " + this._number + " of " + this.suit + " is worth " + this._value;
+        return theString;
+    }
+
     get image(): string {
         return this._image;
     }
