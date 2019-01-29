@@ -66,10 +66,16 @@ export class Player {
         });
     }
 
+    public toString(): string{
+        var theString: string = "Name: " + this._name + " Diff: " + this._difficulty;
+        return theString;
+    }
+
     constructor(aName: string, aDifficulty: number = 0){
         this._name = aName;
         this._difficulty = aDifficulty;
         this._bags = 0;
         this._used = false;
+        console.log(this.toString());
     }
 }

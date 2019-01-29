@@ -110,7 +110,6 @@ export class Game {
 
     public playRound(){
 
-        this.clearTable();
         this.clearHands();
 
         this.dealCards(this._players);
@@ -147,7 +146,6 @@ export class Game {
     constructor (){
 
         this.addCPUs();
-        this.dealCards(this._players);
 
     }
 }

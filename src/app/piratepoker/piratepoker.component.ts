@@ -14,7 +14,7 @@ export class PiratepokerComponent implements OnInit {
   }
 
   ngOnInit() {
-    var game: Game;
+    var game: Game = new Game();
     console.log('Test Print!!');
     game.playRound();
   }

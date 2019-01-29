@@ -5,15 +5,16 @@ export class Card {
     private _value: number;
     private _isDelt: boolean = false;
 
-    constructor(image, suit, number, value) { 
+    constructor(image: string, suit: string, number: string, value: number) { 
         this._image = image
         this._suit = suit
         this._number = number
         this._value = value
+        console.log(this.toString());
     }
 
     public toString(): string{
-        var theString: string = "The " + this._number + " of " + this.suit + " is worth " + this._value;
+        var theString: string = "The " + this._number + " of " + this._suit + " is worth " + this._value;
         return theString;
     }
 

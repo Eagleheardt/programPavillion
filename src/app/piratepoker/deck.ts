@@ -83,4 +83,9 @@ export class Deck {
     get cards(): Card[] {
         return this._cards;
     }
+    constructor(){
+        this._cards.forEach(card => {
+            console.log(card.toString())
+        });
+    }
 }
