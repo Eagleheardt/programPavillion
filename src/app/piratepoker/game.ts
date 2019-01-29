@@ -89,6 +89,8 @@ export class Game {
     private addCPU(){
         var randNum = (Math.floor(Math.random() * 10));
         if (this.cpuPlayers[randNum] && !this.cpuPlayers[randNum].used){
+            console.log(randNum);
+            this.cpuPlayers[randNum].used = true;
             this._players.push(this.cpuPlayers[randNum]);
         }
         else { this.addCPU(); }
@@ -146,6 +148,9 @@ export class Game {
     constructor (){
 
         this.addCPUs();
+        this._players.forEach(p => {
+            console.log(p.toString())
+        });
 
     }
 }
