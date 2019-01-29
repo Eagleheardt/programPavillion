@@ -6,7 +6,7 @@ export class Player {
     private _bet: number;
     private _bags: number;
     private _difficulty: number;
-    private _used: boolean;
+    private _used: boolean = false;
 
     public giveCard(aCard){
         this._hand.push(aCard);
@@ -75,7 +75,6 @@ export class Player {
         this._name = aName;
         this._difficulty = aDifficulty;
         this._bags = 0;
-        this._used = false;
         console.log(this.toString());
     }
 }
