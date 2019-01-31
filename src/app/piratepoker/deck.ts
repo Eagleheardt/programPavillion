@@ -70,7 +70,7 @@ export class Deck {
 
         } while(aCard.isDelt);
 
-        aCard.dealOut;
+        aCard.dealOut();
         return aCard;
     }
 
