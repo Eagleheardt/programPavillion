@@ -118,9 +118,10 @@ export class Game {
         this._players.forEach(player => {
             
             console.log(player.name)
-                player.hand.forEach(card => {
-                    console.log(card.toString())
-                });
+            
+            player.hand.forEach(card => {
+                console.log(card.toString())
+            });
             
         });
 

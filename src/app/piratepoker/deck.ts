@@ -64,16 +64,14 @@ export class Deck {
         
     public getCard(): Card {
 
-        var ranIndex = (Math.floor(Math.random() * this._cards.length));
-        var aCard = this._cards[ranIndex];
+        do{
+            var ranIndex = (Math.floor(Math.random() * this._cards.length));
+            var aCard = this._cards[ranIndex];
 
-        if (aCard.isDelt) {
-            this.getCard();
-        }
-        else{
-            aCard.dealOut();
-            return aCard;
-        }
+        } while(aCard.isDelt);
+
+        aCard.dealOut;
+        return aCard;
     }
 
     public shuffle() {
