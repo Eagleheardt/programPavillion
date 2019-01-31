@@ -112,18 +112,7 @@ export class Game {
     public playRound(){
 
         this.clearHands();
-
         this.dealCards(this._players);
-
-        this._players.forEach(player => {
-            
-            console.log(player.name)
-            
-            player.hand.forEach(card => {
-                console.log(card.toString())
-            });
-            
-        });
 
         this.addRound();
     }
@@ -148,9 +137,5 @@ export class Game {
     constructor (){
 
         this.addCPUs();
-        this._players.forEach(p => {
-            console.log(p.toString())
-        });
-
     }
 }
