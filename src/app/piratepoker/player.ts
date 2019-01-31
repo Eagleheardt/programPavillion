@@ -8,7 +8,7 @@ export class Player {
     private _difficulty: number;
     private _used: boolean = false;
 
-    public giveCard(aCard){
+    public giveCard(aCard: Card){
         this._hand.push(aCard);
     }
 
@@ -20,7 +20,7 @@ export class Player {
         return this._name;
     }
 
-    set name(newName:string) {
+    set name(newName: string) {
         
         if (newName == ''){
             this._name = 'Default';
@@ -75,6 +75,5 @@ export class Player {
         this._name = aName;
         this._difficulty = aDifficulty;
         this._bags = 0;
-        console.log(this.toString());
     }
 }

@@ -67,11 +67,13 @@ export class Deck {
         var ranIndex = (Math.floor(Math.random() * this._cards.length));
         var aCard = this._cards[ranIndex];
 
-        if (!aCard.isDelt) {
+        if (aCard.isDelt) {
             this.getCard();
         }
-        aCard.dealOut();
-        return aCard;
+        else{
+            aCard.dealOut();
+            return aCard;
+        }
     }
 
     public shuffle() {
@@ -84,8 +86,5 @@ export class Deck {
         return this._cards;
     }
     constructor(){
-        this._cards.forEach(card => {
-            console.log(card.toString())
-        });
     }
 }

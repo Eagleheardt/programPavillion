@@ -17,7 +17,7 @@ import { PersonalComponent } from './personal/personal.component';
 import { ProfessionalComponent } from './professional/professional.component';
 import { BlogComponent } from './blog/blog.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { Title }  from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
 import { ForensicsComponent } from './forensics/forensics.component';
 import { RomsComponent } from './roms/roms.component';
 import { SnekComponent } from './snek/snek.component';

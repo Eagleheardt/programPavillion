@@ -5,7 +5,7 @@ import { Card } from './card';
 export class Game {
     private _players: Player[] = [];
     private _playerOrder: number[] = [];
-    private _deck: Deck;
+    private _deck: Deck = new Deck;
     private _roundNumber: number;
     private _targetScore: number;
     private _currentScore: number;
@@ -89,7 +89,6 @@ export class Game {
     private addCPU(){
         var randNum = (Math.floor(Math.random() * 10));
         if (this.cpuPlayers[randNum] && !this.cpuPlayers[randNum].used){
-            console.log(randNum);
             this.cpuPlayers[randNum].used = true;
             this._players.push(this.cpuPlayers[randNum]);
         }

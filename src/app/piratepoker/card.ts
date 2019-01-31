@@ -10,7 +10,6 @@ export class Card {
         this._suit = suit
         this._number = number
         this._value = value
-        console.log(this.toString());
     }
 
     public toString(): string{
