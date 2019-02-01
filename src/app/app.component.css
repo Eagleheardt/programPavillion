@@ -1,0 +1,7 @@
+table.cards img{
+    max-width: 20%;
+}
+
+table.cards div#playerCards img{
+    max-width: 20%;
+}

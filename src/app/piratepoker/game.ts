@@ -30,6 +30,10 @@ export class Game {
         return this._roundNumber;
     }
 
+    get players(): Player[]{
+        return this._players;
+    }
+
     private addRound(){
         this._roundNumber ++;
     }
@@ -135,7 +139,6 @@ export class Game {
     }
 
     constructor (){
-
         this.addCPUs();
     }
 }
