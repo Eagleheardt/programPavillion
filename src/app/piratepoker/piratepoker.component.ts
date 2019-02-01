@@ -47,8 +47,6 @@ export class PiratepokerComponent implements OnInit {
     var game: Game = new Game();
     game.playRound();
 
-    var picNum: number = 0;
-
     this.showHands("playerCard-",game.players[0], "playerCards");
     this.showHands("CPU1Card-",game.players[1], "1");
     this.showHands("CPU2Card-",game.players[2], "2");
