@@ -11,7 +11,7 @@ export class Game {
     private _currentScore: number;
     private _humanPlayer: Player;
     private _winner: Player;
-    private _tableHand: Card[];
+    private _tableHand: Card[] = [];
 
     private cpuPlayers: Player[] = [
         new Player('Chris', 1),
@@ -28,6 +28,10 @@ export class Game {
 
     get roundNumber(): number{
         return this._roundNumber;
+    }
+
+    get tableHand(): Card[]{
+        return this._tableHand;
     }
 
     get players(): Player[]{
@@ -80,6 +84,11 @@ export class Game {
         });
     }
 
+    public addCardToTable(aPlayer: Player, someCard: Card){
+        aPlayer.playCard(someCard)
+        this._tableHand.push(someCard);
+    }
+
     public clearTable(){
         this._tableHand.forEach(element => {
             this._tableHand.pop();            
@@ -117,6 +126,8 @@ export class Game {
 
         this.clearHands();
         this.dealCards(this._players);
+
+        this.addCardToTable(this._players[0], this._players[0].hand[0])
 
         this.addRound();
     }
