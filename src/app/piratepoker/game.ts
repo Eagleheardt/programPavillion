@@ -80,7 +80,7 @@ export class Game {
         });
     }
 
-    private clearTable(){
+    public clearTable(){
         this._tableHand.forEach(element => {
             this._tableHand.pop();            
         });
