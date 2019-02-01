@@ -114,12 +114,9 @@ export class Game {
         }
     }
 
-    public getPlayerCard(){
-
-    }
-
-    private setCards(){
-
+    public playCard(aCard: Card){
+        this._players[0].playCard(aCard);
+        this._tableHand.push(aCard);
     }
 
     public playRound(){
