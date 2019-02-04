@@ -49,18 +49,14 @@ export class PiratepokerComponent implements OnInit {
 
     var movePics = function() {
       aGame.playCard(player, player.hand[parseInt(this.getAttribute("value"))]);
-      document.getElementById("tableHand").appendChild(this);
+      this.className = "tableHand";
+      var tableDisplay = document.getElementById("tableHand");
+      tableDisplay.appendChild(this);
 
-      console.log("Player Hand: \n")
-
-      for(var i = 0; i < player.hand.length; i++){
-        console.log(player.hand[i].toString());
-      }
-
-      console.log("Table Hand: " + aGame.tableHand.length + "\n")
-
-      for(var i = 0; i < aGame.tableHand.length; i++){
-        console.log(aGame.tableHand[i].toString());
+      if(aGame.tableHand.length % 4 == 0){
+        while(tableDisplay.childNodes.length > 2){
+          tableDisplay.removeChild(tableDisplay.lastChild);
+        }
       }
 
       this.removeEventListener("click", movePics);
@@ -125,7 +121,6 @@ export class PiratepokerComponent implements OnInit {
     // game.playCard(game.players[0].hand[0]);
     
     this.showHands("playerCard-",game.players[0], "playerCards", game);
-    this.showTableHand(game.tableHand);
   }
 
 }
