@@ -40,32 +40,59 @@ export class PiratepokerComponent implements OnInit {
   }
 
   private moveTheCard(aGame: Game, index: number){
-    aGame.playCard(aGame.players[0].hand[index]);
+    console.log(index);
     this.showHands("playerCard-",aGame.players[0], "playerCards", aGame);
     this.showTableHand(aGame.tableHand);
   }
 
   private showHands(idPreFix: string, player: Player, divToHold: string, aGame: Game){
 
+    var movePics = function() {
+      aGame.playCard(player, player.hand[parseInt(this.getAttribute("value"))]);
+      document.getElementById("tableHand").appendChild(this);
+
+      console.log("Player Hand: \n")
+
+      for(var i = 0; i < player.hand.length; i++){
+        console.log(player.hand[i].toString());
+      }
+
+      console.log("Table Hand: " + aGame.tableHand.length + "\n")
+
+      for(var i = 0; i < aGame.tableHand.length; i++){
+        console.log(aGame.tableHand[i].toString());
+      }
+
+      this.removeEventListener("click", movePics);
+    };
+
     for(var i = 0; i < player.hand.length; i++){
+
       var img = document.createElement("img");
       img.src = player.hand[i].image;
       img.setAttribute("id", idPreFix + i);
+      img.style.minWidth = "92px";
+      img.style.width = "6%";
       img.style.maxWidth = "6%";
       img.style.marginRight = "4px";
       img.className = "playerHand";
-      img.setAttribute("onclick","moveTheCard(" + aGame + "," + i + ");");
-      // todo: try to use display:none on the card played, and also put all 52 cards in the table hand and only show what's there
 
-      
-      // img.addEventListener('click', function () {
-      //   console.log(aGame.players[0].hand[0]);
-      //   aGame.playCard(aGame.players[0].hand[0]);
-      //   moveTheCard(player,aGame,i);
-      // });
+      img.setAttribute("value",i.toString()); 
+
+      img.addEventListener("click", movePics);
   
       var src = document.getElementById(divToHold);
       src.appendChild(img);
+
+      // img.setAttribute("onclick","console.log(" + i + ");"); // This works
+
+      // needed to add quote literals in order to get this to work dynamically
+
+      // var msg: string = player.hand[i].toString();
+      // img.setAttribute("onclick","console.log(\"" + msg + "\");"); 
+
+      // This above block works for printing the card clicked
+
     }
     this.showTableHand(aGame.tableHand)
   }

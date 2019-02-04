@@ -114,8 +114,8 @@ export class Game {
         }
     }
 
-    public playCard(aCard: Card){
-        this._players[0].playCard(aCard);
+    public playCard(player: Player, aCard: Card){
+        player.playCard(aCard);
         this._tableHand.push(aCard);
     }
 

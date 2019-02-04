@@ -14,8 +14,11 @@ export class Player {
 
     public playCard(aCard: Card){
         for (var i = 0; i < this._hand.length-1; i++){
+            // if (this._hand[i] === aCard){
+            //     this._hand.splice(i,1);
+            // }
             if (this._hand[i] === aCard){
-                this._hand.splice(i,1);
+                this._hand.slice(i,i+1);
             }
         }
     }
