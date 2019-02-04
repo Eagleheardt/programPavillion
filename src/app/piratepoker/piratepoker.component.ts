@@ -23,26 +23,16 @@ export class PiratepokerComponent implements OnInit {
   }
 
   public showTableHand(cardArr: Card[]){
-    var picNum: number = 0;
-
-    cardArr.forEach(card => {
+    for(var i = 0; i < cardArr.length; i++){
       var img = document.createElement("img");
-      img.src = card.image;
-      img.setAttribute("id", "tableHand-" + picNum);
+      img.src = cardArr[i].image;
+      img.setAttribute("id", "tableHand-" + i);
       img.style.marginRight = "4px";
       img.style.maxWidth = "6%";
   
       var src = document.getElementById("tableHand");
       src.appendChild(img);
-      picNum ++;
-      
-    });
-  }
-
-  private moveTheCard(aGame: Game, index: number){
-    console.log(index);
-    this.showHands("playerCard-",aGame.players[0], "playerCards", aGame);
-    this.showTableHand(aGame.tableHand);
+    }
   }
 
   private showHands(idPreFix: string, player: Player, divToHold: string, aGame: Game){
@@ -54,6 +44,8 @@ export class PiratepokerComponent implements OnInit {
       tableDisplay.appendChild(this);
 
       if(aGame.tableHand.length % 4 == 0){
+        // TODO: need to call an eval function here
+        // needs to eval the hand, assign a winner, add to their tricks/bags
         while(tableDisplay.childNodes.length > 2){
           tableDisplay.removeChild(tableDisplay.lastChild);
         }
