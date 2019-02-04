@@ -124,8 +124,6 @@ export class Game {
         this.clearHands();
         this.dealCards(this._players);
 
-        this.addCardToTable(this._players[0], this._players[0].hand[0])
-
         this.addRound();
     }
 

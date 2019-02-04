@@ -22,14 +22,14 @@ export class PiratepokerComponent implements OnInit {
     }
   }
 
-  private showTableHand(cardArr: Card[]){
+  public showTableHand(cardArr: Card[]){
     var picNum: number = 0;
 
     cardArr.forEach(card => {
       var img = document.createElement("img");
       img.src = card.image;
       img.setAttribute("id", "tableHand-" + picNum);
-
+      img.style.marginRight = "4px";
       img.style.maxWidth = "6%";
   
       var src = document.getElementById("tableHand");
@@ -39,24 +39,38 @@ export class PiratepokerComponent implements OnInit {
     });
   }
 
-  private showHands(idPreFix: string, player: Player, divToHold: string){
-    var picNum: number = 0;
+  private moveTheCard(aGame: Game, index: number){
+    aGame.playCard(aGame.players[0].hand[index]);
+    this.showHands("playerCard-",aGame.players[0], "playerCards", aGame);
+    this.showTableHand(aGame.tableHand);
+  }
 
-    player.hand.forEach(card => {
+  private showHands(idPreFix: string, player: Player, divToHold: string, aGame: Game){
+
+    for(var i = 0; i < player.hand.length; i++){
       var img = document.createElement("img");
-      img.src = card.image;
-      img.setAttribute("id", idPreFix + picNum);
+      img.src = player.hand[i].image;
+      img.setAttribute("id", idPreFix + i);
       img.style.maxWidth = "6%";
       img.style.marginRight = "4px";
       img.className = "playerHand";
+      img.setAttribute("onclick","moveTheCard(" + aGame + "," + i + ");");
+      // todo: try to use display:none on the card played, and also put all 52 cards in the table hand and only show what's there
+
+      
+      // img.addEventListener('click', function () {
+      //   console.log(aGame.players[0].hand[0]);
+      //   aGame.playCard(aGame.players[0].hand[0]);
+      //   moveTheCard(player,aGame,i);
+      // });
   
       var src = document.getElementById(divToHold);
       src.appendChild(img);
-      picNum ++;
-    });
+    }
+    this.showTableHand(aGame.tableHand)
   }
 
-  private playCard(aCard: Card){
+  private playCard(aGame: Game, aCard: Card){
 
     var img = document.createElement("img");
     img.src = aCard.image;
@@ -75,17 +89,16 @@ export class PiratepokerComponent implements OnInit {
     var game: Game = new Game();
     game.playRound();
 
+    // game.playCard(game.players[0].hand[0]);
+    // game.playCard(game.players[0].hand[0]);
+    // game.playCard(game.players[0].hand[0]);
+    // game.playCard(game.players[0].hand[0]);
+    // game.playCard(game.players[0].hand[0]);
+    // game.playCard(game.players[0].hand[0]);
+    // game.playCard(game.players[0].hand[0]);
     
-
-    game.playCard(game.players[0].hand[0]);
-    game.playCard(game.players[0].hand[0]);
-    game.playCard(game.players[0].hand[0]);
-    game.playCard(game.players[0].hand[0]);
-    
-    this.showHands("playerCard-",game.players[0], "playerCards");
-
-    this.showTableHand(game.tableHand)
-    
+    this.showHands("playerCard-",game.players[0], "playerCards", game);
+    this.showTableHand(game.tableHand);
   }
 
 }
