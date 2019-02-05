@@ -11,6 +11,9 @@ import { Card } from './card';
 
 export class PiratepokerComponent implements OnInit {
 
+  private humanName: string;
+  
+
   // TODO need a redraw method that will look at the player hand and place only their current cards on the table
 
   private redraw(sourceID: string) {
@@ -37,13 +40,18 @@ export class PiratepokerComponent implements OnInit {
 
   private showHands(idPreFix: string, player: Player, divToHold: string, aGame: Game) {
 
+    var cardsUsed: number = 0;
+
     var movePics = function () {
       aGame.playCard(player, player.hand[parseInt(this.getAttribute("value"))]);
       this.className = "tableHand";
       var tableDisplay = document.getElementById("tableHand");
       tableDisplay.appendChild(this);
+      cardsUsed ++;
 
-      if (aGame.tableHand.length % 4 == 0) {
+      console.log("Total cards played: " + cardsUsed + " Player hand length: " + player.hand.length);
+
+      if (aGame.tableHand.length % aGame.NUMBER_OF_PLAYERS == 0) {
         // TODO: need to call an eval function here
         // needs to eval the hand, assign a winner, add to their tricks/bags
         while (tableDisplay.childNodes.length > 2) {
@@ -51,7 +59,11 @@ export class PiratepokerComponent implements OnInit {
         }
         aGame.clearTable();
       }
-      console.log(aGame.tableHand);
+
+      if(cardsUsed == player.hand.length){
+        aGame.playRound();
+        this.cardsUsed = 0;
+      }
 
       this.removeEventListener("click", movePics);
     };
@@ -61,9 +73,9 @@ export class PiratepokerComponent implements OnInit {
       var img = document.createElement("img");
       img.src = player.hand[i].image;
       img.setAttribute("id", idPreFix + i);
-      img.style.minWidth = "92px";
-      img.style.width = "6%";
-      img.style.maxWidth = "6%";
+      img.style.minWidth = "107px";
+      img.style.width = "7%";
+      img.style.maxWidth = "7%";
       img.style.marginRight = "4px";
       img.className = "playerHand";
 
@@ -115,6 +127,7 @@ export class PiratepokerComponent implements OnInit {
     // game.playCard(game.players[0].hand[0]);
 
     this.showHands("playerCard-", game.players[0], "playerCards", game);
+    this.humanName = game.players[0].name;
   }
 
 }

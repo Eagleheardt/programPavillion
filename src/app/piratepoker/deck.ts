@@ -63,7 +63,6 @@ export class Deck {
     ];
         
     public getCard(): Card {
-
         do{
             var ranIndex = (Math.floor(Math.random() * this._cards.length));
             var aCard = this._cards[ranIndex];

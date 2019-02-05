@@ -1,7 +1,3 @@
 p{
     margin-bottom: 100px;
 }
-
-div#playerCards > img{
-    transition: all 750ms;
-}

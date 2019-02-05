@@ -3,6 +3,18 @@ import { Deck } from './deck';
 import { Card } from './card';
 
 export class Game {
+
+    private readonly _NUMBER_OF_PLAYERS: number = 4; // this can only be 2 or 4
+    private readonly _CARDS_PER_HAND: number = (52 / this._NUMBER_OF_PLAYERS);
+
+    get NUMBER_OF_PLAYERS(): number{
+        return this._NUMBER_OF_PLAYERS;
+    }
+
+    get CARDS_PER_HAND(): number{
+        return this._CARDS_PER_HAND;
+    }
+
     private _players: Player[] = [];
     private _playerOrder: number[] = [];
     private _deck: Deck = new Deck;
@@ -24,7 +36,7 @@ export class Game {
         new Player('Octavio', 8),
         new Player('George', 9),
         new Player('Andre', 10)
-    ];
+    ]; // end of CPU array
 
     get roundNumber(): number{
         return this._roundNumber;
@@ -72,15 +84,19 @@ export class Game {
 
     private dealCards(arrayOfPlayers: Player[]){
         arrayOfPlayers.forEach(person => {
-            for (var i = 0; i < 13; i++){
-                person.giveCard(this._deck.getCard());
-            }// end dealing 13 cards to a player
+            console.log("x " + person.name);
+            for (var i = 0; i < this._CARDS_PER_HAND; i++){
+                var tCard = this._deck.getCard();
+                person.giveCard(tCard);
+                console.log(tCard.toString());
+
+            }// end dealing cards to a player
         }); // end forEach
     }
 
     private clearHands(){
-        this._players.forEach(element => {
-            element.discard();
+        this._players.forEach(player => {
+            player.discard();            
         });
     }
 
@@ -109,7 +125,7 @@ export class Game {
     }
 
     private addCPUs(){
-        for (var i = 0; i < 4; i++){
+        for (var i = 0; i < this._NUMBER_OF_PLAYERS; i++){
             this.addCPU();
         }
     }
@@ -120,10 +136,9 @@ export class Game {
     }
 
     public playRound(){
-
         this.clearHands();
+        this._deck.shuffle();
         this.dealCards(this._players);
-
         this.addRound();
     }
 

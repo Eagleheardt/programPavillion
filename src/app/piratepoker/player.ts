@@ -72,9 +72,9 @@ export class Player {
     }
 
     public discard(){
-        this._hand.forEach(element => {
-            this._hand.pop();            
-        });
+        while(this._hand.length > 0){
+            this._hand.pop();
+        }
     }
 
     public toString(): string{
