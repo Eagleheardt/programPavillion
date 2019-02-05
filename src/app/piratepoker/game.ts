@@ -90,9 +90,9 @@ export class Game {
     }
 
     public clearTable(){
-        this._tableHand.forEach(element => {
-            this._tableHand.pop();            
-        });
+        while(this._tableHand.length > 0){
+            this._tableHand.pop(); 
+        }
     }
 
     public setPlayerName(playerName: string){
