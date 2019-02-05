@@ -4,7 +4,7 @@ import { Card } from './card';
 
 export class Game {
 
-    private readonly _NUMBER_OF_PLAYERS: number = 4; // this can only be 2 or 4
+    private readonly _NUMBER_OF_PLAYERS: number = 2; // this can only be 2 or 4
     private readonly _CARDS_PER_HAND: number = (52 / this._NUMBER_OF_PLAYERS);
 
     get NUMBER_OF_PLAYERS(): number{
@@ -84,12 +84,9 @@ export class Game {
 
     private dealCards(arrayOfPlayers: Player[]){
         arrayOfPlayers.forEach(person => {
-            console.log("x " + person.name);
             for (var i = 0; i < this._CARDS_PER_HAND; i++){
                 var tCard = this._deck.getCard();
                 person.giveCard(tCard);
-                console.log(tCard.toString());
-
             }// end dealing cards to a player
         }); // end forEach
     }
@@ -107,7 +104,7 @@ export class Game {
 
     public clearTable(){
         while(this._tableHand.length > 0){
-            this._tableHand.pop(); 
+            this._tableHand.pop();
         }
     }
 
