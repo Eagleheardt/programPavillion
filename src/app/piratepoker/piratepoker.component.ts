@@ -12,17 +12,25 @@ import { Card } from './card';
 export class PiratepokerComponent implements OnInit {
 
   private humanName: string;
-  
+  private computerName: string;
+  private cardBack: Card = new Card ('assets/challenges/cardPics/ZZZ_Card_Backing.png','XXX','0',0)
 
   // TODO need a redraw method that will look at the player hand and place only their current cards on the table
 
-  private redraw(sourceID: string) {
-    var cards = document.getElementById(sourceID).children;
+  private redraw() {
 
-    for (var i = 0; i < cards.length; i++) {
-      console.log(cards[i]);
-      // cards[i].remove();
+    var tableDisplay = document.getElementById("tableHand");
+
+    while (tableDisplay.childNodes.length > 2) {
+      tableDisplay.removeChild(tableDisplay.lastChild);
     }
+
+    var playerDisplay = document.getElementById("playerCards");
+
+    while (playerDisplay.childNodes.length > 2) {
+      playerDisplay.removeChild(playerDisplay.lastChild);
+    } 
+
   }
 
   public showTableHand(cardArr: Card[]) {
@@ -38,6 +46,10 @@ export class PiratepokerComponent implements OnInit {
     }
   }
 
+  private showCPUHand(idPreFix: string, player: Player, divToHold: string, aGame: Game){
+
+  }
+
   private showHands(idPreFix: string, player: Player, divToHold: string, aGame: Game) {
 
     var cardsUsed: number = 0;
@@ -48,8 +60,6 @@ export class PiratepokerComponent implements OnInit {
       var tableDisplay = document.getElementById("tableHand");
       tableDisplay.appendChild(this);
       cardsUsed ++;
-
-      console.log("Total cards played: " + cardsUsed + " Player hand length: " + player.hand.length);
 
       if (aGame.tableHand.length % aGame.NUMBER_OF_PLAYERS == 0) {
         // TODO: need to call an eval function here
@@ -62,7 +72,59 @@ export class PiratepokerComponent implements OnInit {
 
       if(cardsUsed == player.hand.length){
         aGame.playRound();
-        this.cardsUsed = 0;
+        aGame.clearTable();
+        cardsUsed = 0;
+        // remove all nodes and redraw
+        while (tableDisplay.childNodes.length > 2) {
+          tableDisplay.removeChild(tableDisplay.lastChild);
+        }
+
+        var playerDisplay = document.getElementById("playerCards");
+        var cpuDisplay = document.getElementById("computerHand");
+
+        while (playerDisplay.childNodes.length > 2) {
+          playerDisplay.removeChild(playerDisplay.lastChild);
+        }
+
+        while (cpuDisplay.childNodes.length > 2) {
+          cpuDisplay.removeChild(cpuDisplay.lastChild);
+        }
+
+        for (var i = 0; i < aGame.players[0].hand.length; i++) {
+
+          var img = document.createElement("img");
+          img.src = player.hand[i].image;
+          img.setAttribute("id", idPreFix + i);
+          img.style.minWidth = "107px";
+          img.style.width = "7%";
+          img.style.maxWidth = "7%";
+          img.style.marginRight = "4px";
+          img.className = "playerHand";
+    
+          img.setAttribute("value", i.toString());
+    
+          img.addEventListener("click", movePics);
+    
+          var src = document.getElementById(divToHold);
+          src.appendChild(img);
+        }
+
+        for (var i = 0; i < aGame.players[1].hand.length; i++) {
+
+          var img = document.createElement("img");
+          img.src = aGame.players[1].hand[i].image;
+          img.setAttribute("id", idPreFix + i);
+          img.style.minWidth = "107px";
+          img.style.width = "7%";
+          img.style.maxWidth = "7%";
+          img.style.marginRight = "4px";
+          img.className = "computerHand";
+    
+          img.setAttribute("value", i.toString());
+    
+          var src = document.getElementById("computerHand");
+          src.appendChild(img);
+        }
       }
 
       this.removeEventListener("click", movePics);
@@ -127,7 +189,9 @@ export class PiratepokerComponent implements OnInit {
     // game.playCard(game.players[0].hand[0]);
 
     this.showHands("playerCard-", game.players[0], "playerCards", game);
+    this.showHands("cpuCard-", game.players[1], "computerHand", game);
     this.humanName = game.players[0].name;
+    this.computerName = game.players[1].name;
   }
 
 }
