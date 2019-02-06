@@ -13,17 +13,26 @@ export class PiratepokerComponent implements OnInit {
 
   private humanName: string;
   private computerName: string;
-  private cardBack: Card = new Card ('assets/challenges/cardPics/ZZZ_Card_Backing.png','XXX','0',0);
+
+  private readonly cardBack: Card = new Card ('assets/challenges/cardPics/ZZZ_Card_Backing.png','XXX','0',0);
+
+  private readonly CARD_WIDTH_PERCENT: string = "4%";
+  private readonly CARD_WIDTH_PIXELS: string = "60px";
+  private readonly CARD_MARGIN: string = "4px";
 
   public showTableHand(cardArr: Card[]) {
+    var CARD_WIDTH_PERCENT: string = this.CARD_WIDTH_PERCENT;
+    var CARD_WIDTH_PIXELS: string = this.CARD_WIDTH_PIXELS;
+    var CARD_MARGIN: string = this.CARD_MARGIN;
+
     for (var i = 0; i < cardArr.length; i++) {
       var img = document.createElement("img");
       img.src = cardArr[i].image;
       img.setAttribute("id", "tableHand-" + i);
-      img.style.minWidth = "60px";
-      img.style.width = "4%";
-      img.style.maxWidth = "4%";
-      img.style.marginRight = "4px";
+      img.style.minWidth = CARD_WIDTH_PIXELS;
+      img.style.width = CARD_WIDTH_PERCENT;
+      img.style.maxWidth = CARD_WIDTH_PERCENT;
+      img.style.marginRight = CARD_MARGIN;
 
       var src = document.getElementById("tableHand");
       src.appendChild(img);
@@ -31,16 +40,20 @@ export class PiratepokerComponent implements OnInit {
   }
 
   private showCPUHand(idPreFix: string, player: Player, divToHold: string){
-    var placeCards = function (somePlayer: Player, somePreFix: string, className: string, IDwhereItGoes: string, aCard: Card) {
+    var CARD_WIDTH_PERCENT: string = this.CARD_WIDTH_PERCENT;
+    var CARD_WIDTH_PIXELS: string = this.CARD_WIDTH_PIXELS;
+    var CARD_MARGIN: string = this.CARD_MARGIN;
+
+    var placeCards = function (somePlayer: Player, somePreFix: string, className: string, IDwhereItGoes: string, aCard: Card, cardWidthPercent: string, cardWidthPixels: string, cardMargin: string) {
       for (var i = 0; i < somePlayer.hand.length; i++) {
 
         var img = document.createElement("img");
         img.src = aCard.image;
         img.setAttribute("id", somePreFix + i);
-        img.style.minWidth = "60px";
-        img.style.width = "4%";
-        img.style.maxWidth = "4%";
-        img.style.marginRight = "4px";
+        img.style.minWidth = cardWidthPixels;
+        img.style.width = cardWidthPercent;
+        img.style.maxWidth = cardWidthPercent;
+        img.style.marginRight = cardMargin;
         img.className = className;
   
         img.setAttribute("value", i.toString());
@@ -49,13 +62,17 @@ export class PiratepokerComponent implements OnInit {
         src.appendChild(img);
       }
     }
-    placeCards(player, idPreFix, "compCards", divToHold,this.cardBack)
+    placeCards(player, idPreFix, "compCards", divToHold,this.cardBack, CARD_WIDTH_PERCENT, CARD_WIDTH_PIXELS, CARD_MARGIN)
   }
 
   private showHands(idPreFix: string, player: Player, divToHold: string, aGame: Game) {
 
     var cardsUsed: number = 0;
     var cardBack: Card = this.cardBack;
+
+    var CARD_WIDTH_PERCENT: string = this.CARD_WIDTH_PERCENT;
+    var CARD_WIDTH_PIXELS: string = this.CARD_WIDTH_PIXELS;
+    var CARD_MARGIN: string = this.CARD_MARGIN;
 
     var clearNodes = function (aNode: Node) {
       while(aNode.childNodes.length > 2){
@@ -64,15 +81,16 @@ export class PiratepokerComponent implements OnInit {
     }
 
     var placeCards = function (somePlayer: Player, somePreFix: string, className: string, IDwhereItGoes: string) {
+
       for (var i = 0; i < somePlayer.hand.length; i++) {
 
         var img = document.createElement("img");
         img.src = somePlayer.hand[i].image;
         img.setAttribute("id", somePreFix + i);
-        img.style.minWidth = "60px";
-        img.style.width = "4%";
-        img.style.maxWidth = "4%";
-        img.style.marginRight = "4px";
+        img.style.minWidth = CARD_WIDTH_PIXELS;
+        img.style.width = CARD_WIDTH_PERCENT;
+        img.style.maxWidth = CARD_WIDTH_PERCENT;
+        img.style.marginRight = CARD_MARGIN;
         img.className = className;
   
         img.setAttribute("value", i.toString());
@@ -90,10 +108,10 @@ export class PiratepokerComponent implements OnInit {
         var img = document.createElement("img");
         img.src = aCard.image;
         img.setAttribute("id", somePreFix + i);
-        img.style.minWidth = "60px";
-        img.style.width = "4%";
-        img.style.maxWidth = "4%";
-        img.style.marginRight = "4px";
+        img.style.minWidth = CARD_WIDTH_PIXELS;
+        img.style.width = CARD_WIDTH_PERCENT;
+        img.style.maxWidth = CARD_WIDTH_PERCENT;
+        img.style.marginRight = CARD_MARGIN;
         img.className = className;
   
         img.setAttribute("value", i.toString());
