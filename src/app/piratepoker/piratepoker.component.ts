@@ -13,7 +13,7 @@ export class PiratepokerComponent implements OnInit {
 
   private humanName: string;
   private computerName: string;
-  private cardBack: Card = new Card ('assets/challenges/cardPics/ZZZ_Card_Backing.png','XXX','0',0);  
+  private cardBack: Card = new Card ('assets/challenges/cardPics/ZZZ_Card_Backing.png','XXX','0',0);
 
   public showTableHand(cardArr: Card[]) {
     for (var i = 0; i < cardArr.length; i++) {
