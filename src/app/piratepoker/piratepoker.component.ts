@@ -13,6 +13,7 @@ export class PiratepokerComponent implements OnInit {
 
   private humanName: string;
   private computerName: string;
+  private cardBack: Card = new Card ('assets/challenges/cardPics/ZZZ_Card_Backing.png','XXX','0',0);  
 
   public showTableHand(cardArr: Card[]) {
     for (var i = 0; i < cardArr.length; i++) {
@@ -30,12 +31,11 @@ export class PiratepokerComponent implements OnInit {
   }
 
   private showCPUHand(idPreFix: string, player: Player, divToHold: string){
-    var cardBack: Card = new Card ('assets/challenges/cardPics/ZZZ_Card_Backing.png','XXX','0',0);
-    var placeCards = function (somePlayer: Player, somePreFix: string, className: string, IDwhereItGoes: string) {
+    var placeCards = function (somePlayer: Player, somePreFix: string, className: string, IDwhereItGoes: string, aCard: Card) {
       for (var i = 0; i < somePlayer.hand.length; i++) {
 
         var img = document.createElement("img");
-        img.src = cardBack.image;
+        img.src = aCard.image;
         img.setAttribute("id", somePreFix + i);
         img.style.minWidth = "107px";
         img.style.width = "7%";
@@ -49,12 +49,13 @@ export class PiratepokerComponent implements OnInit {
         src.appendChild(img);
       }
     }
-    placeCards(player, idPreFix, "compCards", divToHold)
+    placeCards(player, idPreFix, "compCards", divToHold,this.cardBack)
   }
 
   private showHands(idPreFix: string, player: Player, divToHold: string, aGame: Game) {
 
     var cardsUsed: number = 0;
+    var cardBack: Card = this.cardBack;
 
     var clearNodes = function (aNode: Node) {
       while(aNode.childNodes.length > 2){
@@ -77,6 +78,25 @@ export class PiratepokerComponent implements OnInit {
         img.setAttribute("value", i.toString());
   
         img.addEventListener("click", movePics);
+  
+        var src = document.getElementById(IDwhereItGoes);
+        src.appendChild(img);
+      }
+    }
+
+    var placeCPUCards = function (somePlayer: Player, somePreFix: string, className: string, IDwhereItGoes: string, aCard: Card) {
+      for (var i = 0; i < somePlayer.hand.length; i++) {
+
+        var img = document.createElement("img");
+        img.src = aCard.image;
+        img.setAttribute("id", somePreFix + i);
+        img.style.minWidth = "107px";
+        img.style.width = "7%";
+        img.style.maxWidth = "7%";
+        img.style.marginRight = "4px";
+        img.className = className;
+  
+        img.setAttribute("value", i.toString());
   
         var src = document.getElementById(IDwhereItGoes);
         src.appendChild(img);
@@ -109,7 +129,7 @@ export class PiratepokerComponent implements OnInit {
         clearNodes(cpuDisplay);
 
         placeCards(aGame.players[0], idPreFix, "playerHand",divToHold);
-        placeCards(aGame.players[1], "ComputerCard-", "computerHand", "computerHand");
+        placeCPUCards(aGame.players[1], "ComputerCard-", "computerHand", "computerHand", cardBack);
       }
 
       this.removeEventListener("click", movePics);
