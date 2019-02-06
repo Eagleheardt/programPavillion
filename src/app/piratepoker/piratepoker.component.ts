@@ -13,25 +13,6 @@ export class PiratepokerComponent implements OnInit {
 
   private humanName: string;
   private computerName: string;
-  private cardBack: Card = new Card ('assets/challenges/cardPics/ZZZ_Card_Backing.png','XXX','0',0)
-
-  // TODO need a redraw method that will look at the player hand and place only their current cards on the table
-
-  private redraw() {
-
-    var tableDisplay = document.getElementById("tableHand");
-
-    while (tableDisplay.childNodes.length > 2) {
-      tableDisplay.removeChild(tableDisplay.lastChild);
-    }
-
-    var playerDisplay = document.getElementById("playerCards");
-
-    while (playerDisplay.childNodes.length > 2) {
-      playerDisplay.removeChild(playerDisplay.lastChild);
-    } 
-
-  }
 
   public showTableHand(cardArr: Card[]) {
     for (var i = 0; i < cardArr.length; i++) {
@@ -46,6 +27,29 @@ export class PiratepokerComponent implements OnInit {
       var src = document.getElementById("tableHand");
       src.appendChild(img);
     }
+  }
+
+  private showCPUHand(idPreFix: string, player: Player, divToHold: string){
+    var cardBack: Card = new Card ('assets/challenges/cardPics/ZZZ_Card_Backing.png','XXX','0',0);
+    var placeCards = function (somePlayer: Player, somePreFix: string, className: string, IDwhereItGoes: string) {
+      for (var i = 0; i < somePlayer.hand.length; i++) {
+
+        var img = document.createElement("img");
+        img.src = cardBack.image;
+        img.setAttribute("id", somePreFix + i);
+        img.style.minWidth = "107px";
+        img.style.width = "7%";
+        img.style.maxWidth = "7%";
+        img.style.marginRight = "4px";
+        img.className = className;
+  
+        img.setAttribute("value", i.toString());
+  
+        var src = document.getElementById(IDwhereItGoes);
+        src.appendChild(img);
+      }
+    }
+    placeCards(player, idPreFix, "compCards", divToHold)
   }
 
   private showHands(idPreFix: string, player: Player, divToHold: string, aGame: Game) {
@@ -114,17 +118,6 @@ export class PiratepokerComponent implements OnInit {
     placeCards(player, idPreFix, "playerHand",divToHold);
   }
 
-  private playCard(aGame: Game, aCard: Card) {
-
-    var img = document.createElement("img");
-    img.src = aCard.image;
-    img.setAttribute("id", "tableHand-" + aCard.value);
-    img.style.maxWidth = "6%";
-
-    var src = document.getElementById("tableHand");
-    src.appendChild(img);
-  }
-
   constructor() {
 
   }
@@ -142,7 +135,7 @@ export class PiratepokerComponent implements OnInit {
     // game.playCard(game.players[0].hand[0]);
 
     this.showHands("playerCard-", game.players[0], "playerCards", game);
-    this.showHands("cpuCard-", game.players[1], "computerHand", game);
+    this.showCPUHand("cpuCard-", game.players[1], "computerHand");
     this.humanName = game.players[0].name;
     this.computerName = game.players[1].name;
   }
