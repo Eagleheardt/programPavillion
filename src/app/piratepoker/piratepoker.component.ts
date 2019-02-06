@@ -20,9 +20,9 @@ export class PiratepokerComponent implements OnInit {
       var img = document.createElement("img");
       img.src = cardArr[i].image;
       img.setAttribute("id", "tableHand-" + i);
-      img.style.minWidth = "107px";
-      img.style.width = "7%";
-      img.style.maxWidth = "7%";
+      img.style.minWidth = "60px";
+      img.style.width = "4%";
+      img.style.maxWidth = "4%";
       img.style.marginRight = "4px";
 
       var src = document.getElementById("tableHand");
@@ -37,9 +37,9 @@ export class PiratepokerComponent implements OnInit {
         var img = document.createElement("img");
         img.src = aCard.image;
         img.setAttribute("id", somePreFix + i);
-        img.style.minWidth = "107px";
-        img.style.width = "7%";
-        img.style.maxWidth = "7%";
+        img.style.minWidth = "60px";
+        img.style.width = "4%";
+        img.style.maxWidth = "4%";
         img.style.marginRight = "4px";
         img.className = className;
   
@@ -69,9 +69,9 @@ export class PiratepokerComponent implements OnInit {
         var img = document.createElement("img");
         img.src = somePlayer.hand[i].image;
         img.setAttribute("id", somePreFix + i);
-        img.style.minWidth = "107px";
-        img.style.width = "7%";
-        img.style.maxWidth = "7%";
+        img.style.minWidth = "60px";
+        img.style.width = "4%";
+        img.style.maxWidth = "4%";
         img.style.marginRight = "4px";
         img.className = className;
   
@@ -90,9 +90,9 @@ export class PiratepokerComponent implements OnInit {
         var img = document.createElement("img");
         img.src = aCard.image;
         img.setAttribute("id", somePreFix + i);
-        img.style.minWidth = "107px";
-        img.style.width = "7%";
-        img.style.maxWidth = "7%";
+        img.style.minWidth = "60px";
+        img.style.width = "4%";
+        img.style.maxWidth = "4%";
         img.style.marginRight = "4px";
         img.className = className;
   
