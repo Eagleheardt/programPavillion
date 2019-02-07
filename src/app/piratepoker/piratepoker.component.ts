@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
 import { Game } from './game';
 import { Player } from './player';
 import { Card } from './card';
+import { isPlatformBrowser } from '@angular/common';
+import { SelectMultipleControlValueAccessor } from '@angular/forms';
 
 @Component({
   selector: 'app-piratepoker',
@@ -19,6 +21,61 @@ export class PiratepokerComponent implements OnInit {
   private readonly CARD_WIDTH_PERCENT: string = "4%";
   private readonly CARD_WIDTH_PIXELS: string = "60px";
   private readonly CARD_MARGIN: string = "4px";
+
+  private sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  private async CPUChooseCard(playerCard: Card, cpuPlayer: Player){
+
+    var cardToReturn: Card = new Card ('','','',0); // blank card
+    var lowCard: Card = new Card ('','','',1000); // blank card
+
+    if (playerCard.suit == null){
+      for(var i = 0; i < cpuPlayer.hand.length; i ++){
+        if(cpuPlayer.hand[i].value > cardToReturn.value){
+          cardToReturn = cpuPlayer.hand[i];
+        }
+      }
+      return cardToReturn;
+    }
+
+    for(var i = 0; i < cpuPlayer.hand.length; i ++){
+      if (cpuPlayer.hand[i].suit == playerCard.suit){
+        if(cpuPlayer.hand[i].value > playerCard.value){
+          cardToReturn = cpuPlayer.hand[i];
+          console.log(playerCard + " < " + cardToReturn);
+          return cardToReturn;
+        }
+        if (cpuPlayer.hand[i].value < lowCard.value){
+          lowCard = cpuPlayer.hand[i];
+        }
+      }
+    }
+    
+    if (lowCard.value != 1000){
+      console.log(playerCard + " LOW CARD 1 " + lowCard);
+      return lowCard;
+    }
+
+    for(var i = 0; i < cpuPlayer.hand.length; i ++){
+      if (cpuPlayer.hand[i].value < lowCard.value){
+        lowCard = cpuPlayer.hand[i];
+      }
+    }
+
+    await this.sleep(9000);
+
+    if (lowCard.value != 1000){
+      console.log(playerCard + " LOW CARD 2 "  + lowCard);
+      return lowCard;
+    }
+
+    else{
+      console.log(playerCard + " high CARD 2 "  + cardToReturn);
+      return cardToReturn;
+    }
+  }
 
   public showTableHand(cardArr: Card[]) {
     var CARD_WIDTH_PERCENT: string = this.CARD_WIDTH_PERCENT;
@@ -62,10 +119,10 @@ export class PiratepokerComponent implements OnInit {
         src.appendChild(img);
       }
     }
-    placeCards(player, idPreFix, "compCards", divToHold,this.cardBack, CARD_WIDTH_PERCENT, CARD_WIDTH_PIXELS, CARD_MARGIN)
+    placeCards(player, idPreFix, "computerHand", divToHold,this.cardBack, CARD_WIDTH_PERCENT, CARD_WIDTH_PIXELS, CARD_MARGIN)
   }
 
-  private showHands(idPreFix: string, player: Player, divToHold: string, aGame: Game) {
+  private async showHands(idPreFix: string, player: Player, divToHold: string, aGame: Game) {
 
     var cardsUsed: number = 0;
     var cardBack: Card = this.cardBack;
@@ -73,6 +130,57 @@ export class PiratepokerComponent implements OnInit {
     var CARD_WIDTH_PERCENT: string = this.CARD_WIDTH_PERCENT;
     var CARD_WIDTH_PIXELS: string = this.CARD_WIDTH_PIXELS;
     var CARD_MARGIN: string = this.CARD_MARGIN;
+
+    var CPUChooseCard = (playerCard: Card, cpuPlayer: Player) : Card => {
+
+      var cardToReturn: Card = new Card ('','','',0); // blank card
+      var lowCard: Card = new Card ('','','',1000); // blank card
+  
+      if (playerCard.suit == null){
+        for(var i = 0; i < cpuPlayer.hand.length; i ++){
+          if(cpuPlayer.hand[i].value > cardToReturn.value){
+            cardToReturn.dealOut();
+            cardToReturn = cpuPlayer.hand[i];
+          }
+        }
+        return cardToReturn;
+      }
+  
+      for(var i = 0; i < cpuPlayer.hand.length; i ++){
+        if (cpuPlayer.hand[i].suit == playerCard.suit){
+          if(cpuPlayer.hand[i].value > playerCard.value){
+            cardToReturn = cpuPlayer.hand[i];
+            console.log(playerCard + " < " + cardToReturn);
+            cardToReturn.dealOut();
+            return cardToReturn;
+          }
+          if (cpuPlayer.hand[i].value < lowCard.value){
+            lowCard = cpuPlayer.hand[i];
+          }
+        }
+      }
+      
+      if (lowCard.value != 1000){
+        console.log(playerCard + " LOW CARD 1 " + lowCard);
+        return lowCard;
+      }
+  
+      for(var i = 0; i < cpuPlayer.hand.length; i ++){
+        if (cpuPlayer.hand[i].value < lowCard.value){
+          lowCard = cpuPlayer.hand[i];
+        }
+      }
+  
+      if (lowCard.value != 1000){
+        console.log(playerCard + " LOW CARD 2 "  + lowCard);
+        return lowCard;
+      }
+  
+      else{
+        console.log(playerCard + " high CARD 2 "  + cardToReturn);
+        return cardToReturn;
+      }
+    }
 
     var clearNodes = function (aNode: Node) {
       while(aNode.childNodes.length > 2){
@@ -122,10 +230,26 @@ export class PiratepokerComponent implements OnInit {
     }
 
     var movePics = function () {
-      aGame.playCard(player, player.hand[parseInt(this.getAttribute("value"))]);
+      var pCard: Card = player.hand[parseInt(this.getAttribute("value"))];
+      aGame.playCard(player, pCard);
       this.className = "tableHand";
       var tableDisplay = document.getElementById("tableHand");
       tableDisplay.appendChild(this);
+
+      var cCard: Card = CPUChooseCard(pCard, aGame.players[1]);
+
+      var img = document.createElement("img");
+        img.src = cCard.image;
+        img.style.minWidth = CARD_WIDTH_PIXELS;
+        img.style.width = CARD_WIDTH_PERCENT;
+        img.style.maxWidth = CARD_WIDTH_PERCENT;
+        img.style.marginRight = CARD_MARGIN;
+        img.className = "computerHand";
+  
+        img.setAttribute("value", cCard.value.toString());
+
+      cCard.putBack();
+
       cardsUsed ++;
 
       if (aGame.tableHand.length % aGame.NUMBER_OF_PLAYERS == 0) {
@@ -176,6 +300,9 @@ export class PiratepokerComponent implements OnInit {
     this.showCPUHand("cpuCard-", game.players[1], "computerHand");
     this.humanName = game.players[0].name;
     this.computerName = game.players[1].name;
+
+
+    this.CPUChooseCard(game.players[0].hand[0], game.players[1]);
   }
 
 }
