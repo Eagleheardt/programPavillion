@@ -14,6 +14,8 @@ export class PiratepokerComponent implements OnInit {
   private readonly CARD_WIDTH_PIXELS: string = "60px";
   private readonly CARD_MARGIN: string = "4px";
 
+  private readonly game: Game = new Game();
+
   // TODO inject cards as JS elements onto the screen
 
   // GOAL: put 10 random cards on the screen
@@ -49,6 +51,9 @@ export class PiratepokerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+    this.placeCards(this.game.players[0], "computerCard", "computerCard", "computerHand");
+    this.placeCards(this.game.players[1], "playerCards", "playerCards", "playerCards");
   }
 
 }

@@ -61,7 +61,7 @@ export class PiratespadesComponent implements OnInit {
       }
     }
 
-    await this.sleep(9000);
+    // await this.sleep(9000);
 
     if (lowCard.value != 1000){
       console.log(playerCard + " LOW CARD 2 "  + lowCard);
