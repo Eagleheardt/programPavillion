@@ -52,7 +52,7 @@ export class PiratepokerComponent implements OnInit {
 
   public newGame(){
 
-    this.game = new Game()
+    this.game = new Game();
 
     var compHand = document.getElementById("computerHand");
     var playerHand = document.getElementById("playerCards");
