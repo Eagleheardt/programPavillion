@@ -4,8 +4,12 @@ import { Card } from './card';
 
 export class Game {
 
-    private readonly _NUMBER_OF_PLAYERS: number = 2; // this can only be 2 or 4
-    private readonly _CARDS_PER_HAND: number = (52 / this._NUMBER_OF_PLAYERS);
+    private readonly _NUMBER_OF_PLAYERS: number = 2;
+    private readonly _CARDS_PER_HAND: number = 5; // 5 card stud
+
+    private _players: Player[] = [];
+    private _deck: Deck = new Deck;
+    private _winner: Player;
 
     get NUMBER_OF_PLAYERS(): number{
         return this._NUMBER_OF_PLAYERS;
@@ -15,148 +19,87 @@ export class Game {
         return this._CARDS_PER_HAND;
     }
 
-    private _players: Player[] = [];
-    private _playerOrder: number[] = [];
-    private _deck: Deck = new Deck;
-    private _roundNumber: number;
-    private _targetScore: number;
-    private _currentScore: number;
-    private _humanPlayer: Player;
-    private _winner: Player;
-    private _tableHand: Card[] = [];
-
-    private cpuPlayers: Player[] = [
-        new Player('Chris', 1),
-        new Player('Randa', 2),
-        new Player('Gary', 3),
-        new Player('Jim', 4),
-        new Player('Clay', 5),
-        new Player('Charlie', 6),
-        new Player('Alan', 7),
-        new Player('Octavio', 8),
-        new Player('George', 9),
-        new Player('Andre', 10)
-    ]; // end of CPU array
-
-    get roundNumber(): number{
-        return this._roundNumber;
-    }
-
-    get tableHand(): Card[]{
-        return this._tableHand;
-    }
-
     get players(): Player[]{
         return this._players;
-    }
-
-    private addRound(){
-        this._roundNumber ++;
-    }
-
-    get targetScore(): number{
-        return this._targetScore
-    }
-
-    set targetScore(maxScore: number){
-        this._targetScore = maxScore;
-    }
-
-    get currentScore(): number{
-        return this._currentScore
-    }
-
-    set currentScore(aScore: number){
-        this._currentScore = aScore;
     }
 
     get winner(): Player{
         return this._winner;
     }
 
-    set winner(aWinner: Player){
-        this._winner = aWinner;
-    }
-
-    public addScore(aScore: number){
-        this._currentScore += aScore;
-    }
-
     private dealCards(arrayOfPlayers: Player[]){
-        arrayOfPlayers.forEach(person => {
-            for (var i = 0; i < this._CARDS_PER_HAND; i++){
+        for(var i = 0; i < this._NUMBER_OF_PLAYERS; i++){
+            arrayOfPlayers[i] = new Player();
+            for (var j = 0; j < this._CARDS_PER_HAND; j++){
                 var tCard = this._deck.getCard();
-                person.giveCard(tCard);
+                arrayOfPlayers[i].giveCard(tCard);
             }// end dealing cards to a player
-        }); // end forEach
+        }
     }
 
-    private clearHands(){
+    private conversion(aCard: Card): number{
+        var dict = {
+            '2':1,
+            '3':2,
+            '4':3,
+            '5':4,
+            '6':5,
+            '7':6,
+            '8':7,
+            '9':8,
+            '10':9,
+            'J':10,
+            'Q':11,
+            'K':12,
+            'A':13
+        };
+
+        if (!(aCard.number in dict)){
+            return 0;
+        }
+        return dict[aCard.number];
+    }
+
+    private assignValue(aDeck: Deck){
+        aDeck.cards.forEach(card => {
+            card.value = this.conversion(card);            
+        });
+    }
+
+    public clearHands(){
         this._players.forEach(player => {
             player.discard();            
         });
     }
 
-    public addCardToTable(aPlayer: Player, someCard: Card){
-        aPlayer.playCard(someCard)
-        this._tableHand.push(someCard);
+    private calcScore(aPlayer: Player){
+        aPlayer.hand.forEach(card => {
+            aPlayer.handWorth += card.value;            
+        });
     }
 
-    public clearTable(){
-        while(this._tableHand.length > 0){
-            this._tableHand.pop();
+    private calcWinner(somePlayers: Player []){
+        somePlayers.forEach(person => {
+            this.calcScore(person);
+        });
+
+        var wPlayer: Player = somePlayers[0];
+        // console.log(wPlayer);
+        // console.log(somePlayers);
+        for(var i = 0; i < somePlayers.length; i++){
+            // console.log(somePlayers[i].handWorth);
+
+            if(somePlayers[i].handWorth > wPlayer.handWorth){
+                wPlayer = somePlayers[i];
+            }
         }
-    }
-
-    public setPlayerName(playerName: string){
-        this._humanPlayer.name = playerName;
-    }
-
-    private addCPU(){
-        var randNum = (Math.floor(Math.random() * 10));
-        if (this.cpuPlayers[randNum] && !this.cpuPlayers[randNum].used){
-            this.cpuPlayers[randNum].used = true;
-            this._players.push(this.cpuPlayers[randNum]);
-        }
-        else { this.addCPU(); }
-    }
-
-    private addCPUs(){
-        for (var i = 0; i < this._NUMBER_OF_PLAYERS; i++){
-            this.addCPU();
-        }
-    }
-
-    public playCard(player: Player, aCard: Card){
-        player.playCard(aCard);
-        this._tableHand.push(aCard);
-    }
-
-    public playRound(){
-        this.clearHands();
-        this._deck.shuffle();
-        this.dealCards(this._players);
-        this.addRound();
-    }
-
-    public playGame(){
-        // TODO get the player's name
-        var lastIndex: number = 0;
-
-        // adding the players to their array
-
-        this._players.push(this._humanPlayer);
-        this.addCPUs();
-
-        // set round
-        this._roundNumber = 1;
-
-        while (this._currentScore < this._targetScore) {
-            this.playRound();            
-        }
+        this._winner = wPlayer;
+        console.log(wPlayer);
     }
 
     constructor (){
-        this.addCPUs();
+        this.assignValue(this._deck);
+        this.dealCards(this._players);
+        this.calcWinner(this._players);
     }
 }

@@ -1,14 +1,13 @@
-<div id="computerHand">{{ computerName }}:<br/></div>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<div id="tableHand">Table Hand:<br/></div>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
+<div id="table">
 
-<table class="cards">
-  <div id="playerCards">{{ humanName }}:<br/></div>
-</table>
+<div class="name">COMPUTER:</div>
+<div id="computerHand"></div>
+
+<div [style.display]="showWinner ? 'inline-block':'none'" id="winner">{{ theWinner }} wins!!</div>
+
+<div><button id="deal" (click)="newGame()">DEAL</button></div>
+
+<div class="name">YOU:</div>
+<div id="playerCards"></div>
+
+</div>

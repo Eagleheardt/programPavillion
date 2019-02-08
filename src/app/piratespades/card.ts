@@ -1,14 +1,15 @@
 export class Card {
     private _image: string;
-    private _suit: string = "XXX";
+    private _suit: string;
     private _number: string;
-    private _value: number = 0;
+    private _value: number;
     private _isDelt: boolean = false;
 
-    constructor(image: string, suit: string, number: string) { 
+    constructor(image: string, suit: string, number: string, value: number) { 
         this._image = image
         this._suit = suit
         this._number = number
+        this._value = value
     }
 
     public toString(): string{
@@ -30,10 +31,6 @@ export class Card {
 
     get value(): number{
         return this._value;
-    }
-
-    set value(aValue: number){
-        this._value = aValue;
     }
 
     get isDelt(): boolean {
