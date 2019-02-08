@@ -72,15 +72,29 @@ export class Game {
         });
     }
 
+    private calcScore(aPlayer: Player){
+        aPlayer.hand.forEach(card => {
+            aPlayer.handWorth += card.value;            
+        });
+    }
+
     private calcWinner(somePlayers: Player []){
-        var wPlayer: Player = new Player();
+        somePlayers.forEach(person => {
+            this.calcScore(person);
+        });
+
+        var wPlayer: Player = somePlayers[0];
+        // console.log(wPlayer);
+        // console.log(somePlayers);
         for(var i = 0; i < somePlayers.length; i++){
+            // console.log(somePlayers[i].handWorth);
+
             if(somePlayers[i].handWorth > wPlayer.handWorth){
                 wPlayer = somePlayers[i];
             }
         }
         this._winner = wPlayer;
-        console.log(this._winner);
+        console.log(wPlayer);
     }
 
     constructor (){

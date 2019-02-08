@@ -30,10 +30,11 @@ export class Player {
     }
 
     get handWorth(): number{
-        for(var i = 0; i < this._hand.length; i++){
-            this._handWorth += this._hand[i].value;
-        }
         return this._handWorth;
+    }
+
+    set handWorth(amt: number){
+        this._handWorth = amt;
     }
 
     public toString(): string{

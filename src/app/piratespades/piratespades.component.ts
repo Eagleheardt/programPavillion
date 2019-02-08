@@ -41,7 +41,7 @@ export class PiratespadesComponent implements OnInit {
       if (cpuPlayer.hand[i].suit == playerCard.suit){
         if(cpuPlayer.hand[i].value > playerCard.value){
           cardToReturn = cpuPlayer.hand[i];
-          console.log(playerCard + " < " + cardToReturn);
+          console.log("Player Loses.");
           return cardToReturn;
         }
         if (cpuPlayer.hand[i].value < lowCard.value){
@@ -147,7 +147,7 @@ export class PiratespadesComponent implements OnInit {
         if (cpuPlayer.hand[i].suit == playerCard.suit){
           if(cpuPlayer.hand[i].value > playerCard.value){
             cardToReturn = cpuPlayer.hand[i];
-            console.log(playerCard + " < " + cardToReturn);
+            console.log("Player Loses.");
             cardToReturn.dealOut();
             return cardToReturn;
           }
@@ -158,7 +158,7 @@ export class PiratespadesComponent implements OnInit {
       }
       
       if (lowCard.value != 1000){
-        console.log(playerCard + " LOW CARD 1 " + lowCard);
+        console.log("Player wins!");
         return lowCard;
       }
   
