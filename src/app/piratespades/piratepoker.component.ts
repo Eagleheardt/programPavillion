@@ -1,9 +1,7 @@
-import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Game } from './game';
 import { Player } from './player';
 import { Card } from './card';
-import { isPlatformBrowser } from '@angular/common';
-import { SelectMultipleControlValueAccessor } from '@angular/forms';
 
 @Component({
   selector: 'app-piratepoker',
