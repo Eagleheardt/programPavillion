@@ -1,0 +1,30 @@
+div{
+    text-align: center;
+}
+
+div#table{
+    background-image: url('/assets/challenges/cardPics/tableBG.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 610px;
+}
+
+div.name{
+    background: blue;
+    color: orange;
+    display: inline-block;
+    font-size: 35px;
+    margin: 10px 0 4px;
+}
+
+div#computerHand{
+    margin-bottom: 70px;
+    text-align: center;
+    min-height: 210px;
+}
+
+button#deal{
+    height: 35px;
+    width: 100px;
+}

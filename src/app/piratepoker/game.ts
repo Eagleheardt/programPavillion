@@ -7,6 +7,10 @@ export class Game {
     private readonly _NUMBER_OF_PLAYERS: number = 2;
     private readonly _CARDS_PER_HAND: number = 5; // 5 card stud
 
+    private _players: Player[] = [];
+    private _deck: Deck = new Deck;
+    private _winner: Player;
+
     get NUMBER_OF_PLAYERS(): number{
         return this._NUMBER_OF_PLAYERS;
     }
@@ -14,10 +18,6 @@ export class Game {
     get CARDS_PER_HAND(): number{
         return this._CARDS_PER_HAND;
     }
-
-    private _players: Player[] = [];
-    private _deck: Deck = new Deck;
-    private _winner: Player;
 
     get players(): Player[]{
         return this._players;
@@ -39,9 +39,6 @@ export class Game {
                 arrayOfPlayers[i].giveCard(tCard);
             }// end dealing cards to a player
         }
-        arrayOfPlayers.forEach(person => {
-            
-        }); // end forEach
     }
 
     public clearHands(){

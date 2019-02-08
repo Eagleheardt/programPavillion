@@ -10,8 +10,7 @@ import { Card } from './card';
 })
 export class PiratepokerComponent implements OnInit {
 
-  private readonly CARD_WIDTH_PERCENT: string = "4%";
-  private readonly CARD_WIDTH_PIXELS: string = "60px";
+  private readonly CARD_WIDTH_PERCENT: string = "8%";
   private readonly CARD_MARGIN: string = "4px";
 
   private game: Game;
@@ -21,7 +20,7 @@ export class PiratepokerComponent implements OnInit {
   // GOAL: put 10 random cards on the screen
   // GOAL: put 10 random cards on the screen, from one deck
 
-  private clearNodes = (aNode: Node, amtToLeave: number = 2) => {
+  private clearNodes = (aNode: Node, amtToLeave: number = 0) => {
     while(aNode.childNodes.length > amtToLeave){
       aNode.removeChild(aNode.lastChild);
     }
@@ -33,7 +32,6 @@ export class PiratepokerComponent implements OnInit {
       var img = document.createElement("img");
       
       img.setAttribute("id", IDPreFix + "-" + i);
-      img.style.minWidth = this.CARD_WIDTH_PIXELS;
       img.style.width = this.CARD_WIDTH_PERCENT;
       img.style.maxWidth = this.CARD_WIDTH_PERCENT;
       img.style.marginRight = this.CARD_MARGIN;
@@ -57,7 +55,7 @@ export class PiratepokerComponent implements OnInit {
     this.clearNodes(playerHand);
 
     this.game = new Game()
-    
+
     this.placeCards(this.game.players[0], "computerHand", "computerHand", "computerHand");
     this.placeCards(this.game.players[1], "playerCards", "playerCards", "playerCards");
   }
@@ -65,9 +63,6 @@ export class PiratepokerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.game = new Game()
-    this.placeCards(this.game.players[0], "computerCard", "computerCard", "computerHand");
-    this.placeCards(this.game.players[1], "playerCards", "playerCards", "playerCards");
   }
 
 }
