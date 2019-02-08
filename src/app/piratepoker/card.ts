@@ -1,6 +1,6 @@
 export class Card {
     private _image: string;
-    private _suit: string;
+    private _suit: string = "XXX";
     private _number: string;
     private _value: number = 0;
     private _isDelt: boolean = false;

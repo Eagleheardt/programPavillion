@@ -12,15 +12,19 @@ export class PiratepokerComponent implements OnInit {
 
   private readonly CARD_WIDTH_PERCENT: string = "8%";
   private readonly CARD_MARGIN: string = "4px";
+  private readonly NODES_TO_LEAVE: number = 0;
 
   private game: Game;
+
+  private theWinner: string;
+  private showWinner: boolean = false;
 
   // TODO inject cards as JS elements onto the screen
 
   // GOAL: put 10 random cards on the screen
   // GOAL: put 10 random cards on the screen, from one deck
 
-  private clearNodes = (aNode: Node, amtToLeave: number = 0) => {
+  private clearNodes = (aNode: Node, amtToLeave: number = this.NODES_TO_LEAVE) => {
     while(aNode.childNodes.length > amtToLeave){
       aNode.removeChild(aNode.lastChild);
     }
@@ -48,16 +52,22 @@ export class PiratepokerComponent implements OnInit {
 
   public newGame(){
 
+    this.game = new Game()
+
     var compHand = document.getElementById("computerHand");
     var playerHand = document.getElementById("playerCards");
+
+    this.game.players[0].name = "The Computer";
+    this.game.players[1].name = "The Player";
 
     this.clearNodes(compHand);
     this.clearNodes(playerHand);
 
-    this.game = new Game()
-
     this.placeCards(this.game.players[0], "computerHand", "computerHand", "computerHand");
     this.placeCards(this.game.players[1], "playerCards", "playerCards", "playerCards");
+
+    this.showWinner = true;
+    this.theWinner = this.game.winner.name;
   }
 
   constructor() { }

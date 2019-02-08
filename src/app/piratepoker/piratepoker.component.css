@@ -7,7 +7,7 @@ div#table{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    min-height: 610px;
+    min-height: 640px;
 }
 
 div.name{
@@ -21,7 +21,15 @@ div.name{
 div#computerHand{
     margin-bottom: 70px;
     text-align: center;
-    min-height: 210px;
+    min-height: 190px;
+}
+
+div#winner{
+    display: none;
+    background: blue;
+    color: orange;
+    font-size: 35px;
+    margin: 10px 0 4px;
 }
 
 button#deal{

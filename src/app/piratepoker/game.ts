@@ -27,10 +27,6 @@ export class Game {
         return this._winner;
     }
 
-    set winner(aWinner: Player){
-        this._winner = aWinner;
-    }
-
     private dealCards(arrayOfPlayers: Player[]){
         for(var i = 0; i < this._NUMBER_OF_PLAYERS; i++){
             arrayOfPlayers[i] = new Player();
@@ -41,13 +37,55 @@ export class Game {
         }
     }
 
+    private conversion(aCard: Card): number{
+        var dict = {
+            '2':1,
+            '3':2,
+            '4':3,
+            '5':4,
+            '6':5,
+            '7':6,
+            '8':7,
+            '9':8,
+            '10':9,
+            'J':10,
+            'Q':11,
+            'K':12,
+            'A':13
+        };
+
+        if (!(aCard.number in dict)){
+            return 0;
+        }
+        return dict[aCard.number];
+    }
+
+    private assignValue(aDeck: Deck){
+        aDeck.cards.forEach(card => {
+            card.value = this.conversion(card);            
+        });
+    }
+
     public clearHands(){
         this._players.forEach(player => {
             player.discard();            
         });
     }
 
+    private calcWinner(somePlayers: Player []){
+        var wPlayer: Player = new Player();
+        for(var i = 0; i < somePlayers.length; i++){
+            if(somePlayers[i].handWorth > wPlayer.handWorth){
+                wPlayer = somePlayers[i];
+            }
+        }
+        this._winner = wPlayer;
+        console.log(this._winner);
+    }
+
     constructor (){
+        this.assignValue(this._deck);
         this.dealCards(this._players);
+        this.calcWinner(this._players);
     }
 }

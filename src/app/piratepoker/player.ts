@@ -2,7 +2,8 @@ import { Card } from './card'
 
 export class Player {
     private _hand: Card[] = [];
-    private _name: string;
+    private _name: string = "Default";
+    private _handWorth: number = 0;
 
     public giveCard(aCard: Card){
         this._hand.push(aCard);
@@ -26,6 +27,13 @@ export class Player {
             this._name = 'Default';
         }
         else { this._name = newName; }
+    }
+
+    get handWorth(): number{
+        for(var i = 0; i < this._hand.length; i++){
+            this._handWorth += this._hand[i].value;
+        }
+        return this._handWorth;
     }
 
     public toString(): string{
