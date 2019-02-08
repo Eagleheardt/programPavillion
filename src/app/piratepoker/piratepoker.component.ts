@@ -14,7 +14,7 @@ export class PiratepokerComponent implements OnInit {
   private readonly CARD_WIDTH_PIXELS: string = "60px";
   private readonly CARD_MARGIN: string = "4px";
 
-  private readonly game: Game = new Game();
+  private game: Game;
 
   // TODO inject cards as JS elements onto the screen
 
@@ -48,10 +48,24 @@ export class PiratepokerComponent implements OnInit {
     }
   }
 
+  public newGame(){
+
+    var compHand = document.getElementById("computerHand");
+    var playerHand = document.getElementById("playerCards");
+
+    this.clearNodes(compHand);
+    this.clearNodes(playerHand);
+
+    this.game = new Game()
+    
+    this.placeCards(this.game.players[0], "computerHand", "computerHand", "computerHand");
+    this.placeCards(this.game.players[1], "playerCards", "playerCards", "playerCards");
+  }
+
   constructor() { }
 
   ngOnInit() {
-
+    this.game = new Game()
     this.placeCards(this.game.players[0], "computerCard", "computerCard", "computerHand");
     this.placeCards(this.game.players[1], "playerCards", "playerCards", "playerCards");
   }

@@ -44,7 +44,7 @@ export class Game {
         }); // end forEach
     }
 
-    private clearHands(){
+    public clearHands(){
         this._players.forEach(player => {
             player.discard();            
         });
