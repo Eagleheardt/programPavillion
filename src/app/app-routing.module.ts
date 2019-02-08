@@ -21,6 +21,7 @@ import { MinesweeperComponent } from './minesweeper/minesweeper.component';
 import { MadnessComponent } from './madness/madness.component';
 import { PiratesortComponent } from './piratesort/piratesort.component';
 import { PiratepokerComponent } from './piratepoker/piratepoker.component';
+import { PiratespadesComponent } from './piratepoker/piratepoker.component';
 
 /*
 ************************************
@@ -49,7 +50,8 @@ const routes: Routes = [
   {path: 'challenges/minesweeper', component: MinesweeperComponent}, // This will use sub pages instead of nesting pages
   {path: 'challenges/madness', component: MadnessComponent},
   {path: 'challenges/piratesort', component: PiratesortComponent},
-  {path: 'challenges/piratepoker', component: PiratepokerComponent}
+  {path: 'challenges/piratepoker', component: PiratepokerComponent},
+  {path: 'challenges/piratespades', component: PiratespadesComponent}
 
 
 

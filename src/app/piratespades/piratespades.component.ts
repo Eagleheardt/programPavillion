@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Game } from './game';
-import { Player } from './player';
 import { Card } from './card';
+import { Player } from './player';
+import { Game } from './game';
 
 @Component({
-  selector: 'app-piratepoker',
-  templateUrl: './piratepoker.component.html',
-  styleUrls: ['./piratepoker.component.css']
+  selector: 'app-piratespades',
+  templateUrl: './piratespades.component.html',
+  styleUrls: ['./piratespades.component.css']
 })
-
-export class PiratepokerComponent implements OnInit {
+export class PiratespadesComponent implements OnInit {
 
   private humanName: string;
   private computerName: string;
