@@ -4,8 +4,8 @@ import { Card } from './card';
 
 export class Game {
 
-    private readonly _NUMBER_OF_PLAYERS: number = 2; // this can only be 2 or 4
-    private readonly _CARDS_PER_HAND: number = (52 / this._NUMBER_OF_PLAYERS);
+    private readonly _NUMBER_OF_PLAYERS: number = 2;
+    private readonly _CARDS_PER_HAND: number = 5; // 5 card stud
 
     get NUMBER_OF_PLAYERS(): number{
         return this._NUMBER_OF_PLAYERS;
