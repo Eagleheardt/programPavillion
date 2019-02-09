@@ -2,7 +2,7 @@ import { Card } from '../../assets/deckOfCardsClasses/card';
 
 export class Deck {
     
-    private _cards: Card[] = [
+    private _cards: Card[] = [ // declares a standard deck of cards
         // Spades
         new Card ('assets/deckOfCardsImages/ace_of_spades.png','Spades','A'),
         new Card ('assets/deckOfCardsImages/king_of_spades2.png','Spades','K'),
@@ -59,14 +59,29 @@ export class Deck {
         new Card ('assets/deckOfCardsImages/8_of_clubs.png','Clubs','8'),
         new Card ('assets/deckOfCardsImages/9_of_clubs.png','Clubs','9'),
         new Card ('assets/deckOfCardsImages/10_of_clubs.png','Clubs','10')
-        
-        // end of suits, optional 2 jokers below?
     ];
+    
+    /**********************************\
+    |**********************************|
+    |***********  End of Deck  ********|
+    |**********************************|
+    \**********************************/
 
-    private readonly _cardBack: Card = new Card ('assets/deckOfCardsImages/ZZZ_Card_Backing.png','XXX','0');
+    private readonly _redJoker: Card = new Card ('assets/deckOfCardsImages/red_joker.png','XXX','XX'); // the backside of the card
+    private readonly _blackJoker: Card = new Card ('assets/deckOfCardsImages/black_joker.png','XXX','XX'); // the backside of the card
+
+    private readonly _cardBack: Card = new Card ('assets/deckOfCardsImages/ZZZ_Card_Backing.png','XXX','0'); // the backside of the card
 
     get CardBack() : Card{
         return this._cardBack;
+    }
+
+    get redJoker(): Card{
+        return this._redJoker;
+    }
+
+    get blackJoker(): Card{
+        return this._blackJoker;
     }
         
     public getCard(): Card {
