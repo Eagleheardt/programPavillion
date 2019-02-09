@@ -18,11 +18,6 @@ export class PiratepokerComponent implements OnInit {
   private theWinner: string;
   private showWinner: boolean = false;
 
-  // TODO inject cards as JS elements onto the screen
-
-  // GOAL: put 10 random cards on the screen
-  // GOAL: put 10 random cards on the screen, from one deck
-
   private clearNodes = (aNode: Node, amtToLeave: number = this.NODES_TO_LEAVE) => {
     while(aNode.childNodes.length > amtToLeave){
       aNode.removeChild(aNode.lastChild);
