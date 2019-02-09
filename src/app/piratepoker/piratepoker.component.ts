@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from './game';
 import { Player } from './player';
-import { Card } from './card';
 
 @Component({
   selector: 'app-piratepoker',

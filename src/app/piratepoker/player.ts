@@ -1,4 +1,4 @@
-import { Card } from './card'
+import { Card } from '../../assets/deckOfCardsClasses/card'
 
 export class Player {
     private _hand: Card[] = [];

@@ -23,11 +23,11 @@ import { PiratesortComponent } from './piratesort/piratesort.component';
 import { PiratepokerComponent } from './piratepoker/piratepoker.component';
 import { PiratespadesComponent } from './piratespades/piratespades.component';
 
-/*
-************************************
-******* Beginning of Routes  *******
-************************************
-*/
+/**********************************\
+|**********************************|
+|*****  Beginning of Routes  ******|
+|**********************************|
+\**********************************/
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -53,15 +53,13 @@ const routes: Routes = [
   {path: 'challenges/piratepoker', component: PiratepokerComponent},
   {path: 'challenges/piratespades', component: PiratespadesComponent}
 
-
-
 ];
 
-/*
-************************************
-************* End of Routes ********
-************************************
-*/
+/**********************************\
+|**********************************|
+|***********  End of Routes  ******|
+|**********************************|
+\**********************************/
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
