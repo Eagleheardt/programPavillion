@@ -1,6 +1,6 @@
 import { Player } from './player'
-import { Deck } from './deck';
-import { Card } from './card';
+import { Deck } from '../../assets/deckOfCardsClasses/deck';
+import { Card } from '../../assets/deckOfCardsClasses/card';
 
 export class Game {
 
