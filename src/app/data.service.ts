@@ -12,12 +12,16 @@ export class DataService {
     this.titleService.setTitle( newTitle );
   }
 
-  public sleep(ms) {
+  // will allow for delayed events, so that I never have to recode this
+
+  public async sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  public clearNodes = function (aNode: Node) {
-    while(aNode.childNodes.length > 0){
+  // clear the children off a parent, leave what you want
+
+  public clearNodes = function (aNode: Node, amtToLeave: number = 0) {
+    while(aNode.childNodes.length > amtToLeave){
       aNode.removeChild(aNode.lastChild);
     }
   }
