@@ -13,7 +13,7 @@ export class PiratespadesComponent implements OnInit {
   private humanName: string;
   private computerName: string;
 
-  private readonly cardBack: Card = new Card ('assets/challenges/cardPics/ZZZ_Card_Backing.png','XXX','0',0);
+  private readonly cardBack: Card = new Card ('assets/deckOfCardsImages/ZZZ_Card_Backing.png','XXX','0',0);
 
   private readonly CARD_WIDTH_PERCENT: string = "4%";
   private readonly CARD_WIDTH_PIXELS: string = "60px";
@@ -161,22 +161,6 @@ export class PiratespadesComponent implements OnInit {
         console.log("Player wins!");
         return lowCard;
       }
-  
-      for(var i = 0; i < cpuPlayer.hand.length; i ++){
-        if (cpuPlayer.hand[i].value < lowCard.value){
-          lowCard = cpuPlayer.hand[i];
-        }
-      }
-  
-      if (lowCard.value != 1000){
-        console.log(playerCard + " LOW CARD 2 "  + lowCard);
-        return lowCard;
-      }
-  
-      else{
-        console.log(playerCard + " high CARD 2 "  + cardToReturn);
-        return cardToReturn;
-      }
     }
 
     var clearNodes = function (aNode: Node) {
@@ -270,10 +254,10 @@ export class PiratespadesComponent implements OnInit {
         placeCards(aGame.players[0], idPreFix, "playerHand",divToHold);
         placeCPUCards(aGame.players[1], "ComputerCard-", "computerHand", "computerHand", cardBack);
       }
-
       this.removeEventListener("click", movePics);
+      var CPUDIV = document.getElementById("computerHand");
+      CPUDIV.removeChild(CPUDIV.lastChild);
     }
-
     placeCards(player, idPreFix, "playerHand",divToHold);
   }
 

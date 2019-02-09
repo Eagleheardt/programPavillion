@@ -12,7 +12,15 @@ export class DataService {
     this.titleService.setTitle( newTitle );
   }
 
-  
+  public sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  public clearNodes = function (aNode: Node) {
+    while(aNode.childNodes.length > 0){
+      aNode.removeChild(aNode.lastChild);
+    }
+  }
 
  /*  firstClick() {
     return console.log('clicked');
