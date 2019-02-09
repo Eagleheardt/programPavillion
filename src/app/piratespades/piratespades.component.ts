@@ -216,6 +216,8 @@ export class PiratespadesComponent implements OnInit {
       this.className = "tableHand";
       var tableDisplay = document.getElementById("tableHand");
       tableDisplay.appendChild(this);
+      var CPUDIV = document.getElementById("computerHand");
+      CPUDIV.removeChild(CPUDIV.lastChild);
 
       var cCard: Card = CPUChooseCard(pCard, aGame.players[1]);
 
@@ -255,8 +257,6 @@ export class PiratespadesComponent implements OnInit {
         placeCPUCards(aGame.players[1], "ComputerCard-", "computerHand", "computerHand", cardBack);
       }
       this.removeEventListener("click", movePics);
-      var CPUDIV = document.getElementById("computerHand");
-      CPUDIV.removeChild(CPUDIV.lastChild);
     }
     placeCards(player, idPreFix, "playerHand",divToHold);
   }
