@@ -6,11 +6,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class DataService {
 
-  constructor(private titleService: Title) { }
-
-  public setPageTitle( newTitle: string) {
-    this.titleService.setTitle( newTitle );
-  }
+  constructor() { }
 
   // will allow for delayed events, so that I never have to recode this
 
@@ -26,11 +22,12 @@ export class DataService {
     }
   }
 
- /*  firstClick() {
-    return console.log('clicked');
-  } */
+  // creates a picture element
 
- /*  getUsers() {
-    return this.http.get('http://reqres.in/api/users')
-  } */
+  public HTMLPic(imgLocation: string): HTMLElement{
+    var img = document.createElement("img");
+        img.src = imgLocation;
+
+        return img;
+  }
 }
