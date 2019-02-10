@@ -6,9 +6,11 @@ import { Title } from '@angular/platform-browser';
 })
 export class DataService {
 
-  constructor() { }
+  constructor(private titleService: Title) { }
 
-  // will allow for delayed events, so that I never have to recode this
+  public setPageTitle( newTitle: string) {
+    this.titleService.setTitle( newTitle );
+  }
 
   public async sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -24,10 +26,18 @@ export class DataService {
 
   // creates a picture element
 
-  public HTMLPic(imgLocation: string): HTMLElement{
+  public HTMLPic(imgLocation: string): HTMLImageElement{
     var img = document.createElement("img");
         img.src = imgLocation;
 
         return img;
   }
+
+ /*  firstClick() {
+    return console.log('clicked');
+  } */
+
+ /*  getUsers() {
+    return this.http.get('http://reqres.in/api/users')
+  } */
 }
