@@ -13,7 +13,7 @@ export class Card {
     }
 
     public toString(): string{
-        var theString: string = "The " + this._number + " of " + this._suit + " is worth " + this._value;
+        var theString: string = "The " + this._number + " of " + this._suit;
         return theString;
     }
 

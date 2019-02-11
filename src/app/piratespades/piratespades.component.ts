@@ -41,6 +41,8 @@ export class PiratespadesComponent implements OnInit {
       if (cpuPlayer.hand[i].suit == playerCard.suit){
         if(cpuPlayer.hand[i].value > playerCard.value){
           cardToReturn = cpuPlayer.hand[i];
+          console.log("Computer plays: " + cpuPlayer.hand[i].toString());
+          console.log("Player plays: " + playerCard.toString());
           console.log("Player Loses.");
           return cardToReturn;
         }
@@ -51,7 +53,9 @@ export class PiratespadesComponent implements OnInit {
     }
     
     if (lowCard.value != 1000){
-      console.log(playerCard + " LOW CARD 1 " + lowCard);
+      console.log("Computer plays: " + lowCard.toString());
+      console.log("Player plays: " + playerCard.toString());
+      console.log("Player Loses.");
       return lowCard;
     }
 
@@ -147,6 +151,8 @@ export class PiratespadesComponent implements OnInit {
         if (cpuPlayer.hand[i].suit == playerCard.suit){
           if(cpuPlayer.hand[i].value > playerCard.value){
             cardToReturn = cpuPlayer.hand[i];
+            console.log("Computer plays: " + cpuPlayer.hand[i].toString());
+            console.log("Player plays: " + playerCard.toString());
             console.log("Player Loses.");
             cardToReturn.dealOut();
             return cardToReturn;
@@ -158,6 +164,8 @@ export class PiratespadesComponent implements OnInit {
       }
       
       if (lowCard.value != 1000){
+        console.log("Computer plays: " + lowCard.toString());
+        console.log("Player plays: " + playerCard.toString());
         console.log("Player wins!");
         return lowCard;
       }
@@ -219,7 +227,10 @@ export class PiratespadesComponent implements OnInit {
       var CPUDIV = document.getElementById("computerHand");
       CPUDIV.removeChild(CPUDIV.lastChild);
 
+      
       var cCard: Card = CPUChooseCard(pCard, aGame.players[1]);
+
+      cCard.putBack();
 
       var img = document.createElement("img");
         img.src = cCard.image;
@@ -230,8 +241,6 @@ export class PiratespadesComponent implements OnInit {
         img.className = "computerHand";
   
         img.setAttribute("value", cCard.value.toString());
-
-      cCard.putBack();
 
       cardsUsed ++;
 
