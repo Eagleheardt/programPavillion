@@ -11,7 +11,7 @@ export class Deck {
         new Card ('assets/deckOfCardsImages/2_of_spades.png','Spades','2'),
         new Card ('assets/deckOfCardsImages/3_of_spades.png','Spades','3'),
         new Card ('assets/deckOfCardsImages/4_of_spades.png','Spades','4'),
-        new Card ('assets/deckOfCardsImages/5_of_spades.png','Spades','5',),
+        new Card ('assets/deckOfCardsImages/5_of_spades.png','Spades','5'),
         new Card ('assets/deckOfCardsImages/6_of_spades.png','Spades','6'),
         new Card ('assets/deckOfCardsImages/7_of_spades.png','Spades','7'),
         new Card ('assets/deckOfCardsImages/8_of_spades.png','Spades','8'),
@@ -76,11 +76,11 @@ export class Deck {
         return this._cardBack;
     }
 
-    get redJoker(): Card{
+    get RedJoker(): Card{
         return this._redJoker;
     }
 
-    get blackJoker(): Card{
+    get BlackJoker(): Card{
         return this._blackJoker;
     }
         
@@ -106,7 +106,7 @@ export class Deck {
         });
     }
 
-    get cards(): Card[] {
+    get AllCards(): Card[] {
         return this._cards;
     }
     

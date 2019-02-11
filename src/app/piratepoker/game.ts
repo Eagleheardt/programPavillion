@@ -61,7 +61,7 @@ export class Game {
     }
 
     private assignValue(aDeck: Deck){
-        aDeck.cards.forEach(card => {
+        aDeck.AllCards.forEach(card => {
             card.value = this.conversion(card);            
         });
     }
