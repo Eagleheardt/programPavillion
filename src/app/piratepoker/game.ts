@@ -94,7 +94,6 @@ export class Game {
             }
         }
         this._winner = wPlayer;
-        console.log(wPlayer);
     }
 
     constructor (){
