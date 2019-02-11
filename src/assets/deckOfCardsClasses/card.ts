@@ -16,27 +16,27 @@ export class Card {
         return theString;
     }
 
-    get image(): string {
+    get Image(): string {
         return this._image;
     }
 
-    get suit(): string {
+    get Suit(): string {
         return this._suit;
     }
 
-    get number(): string {
+    get Number(): string {
         return this._number;
     }
 
-    get value(): number{
+    get Value(): number{
         return this._value;
     }
 
-    set value(aValue: number){
+    set Value(aValue: number){
         this._value = aValue;
     }
 
-    get isDelt(): boolean {
+    get IsDelt(): boolean {
         return this._isDelt;
     }
 

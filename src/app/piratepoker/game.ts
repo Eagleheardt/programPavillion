@@ -54,15 +54,15 @@ export class Game {
             'A':13
         };
 
-        if (!(aCard.number in dict)){
+        if (!(aCard.Number in dict)){
             return 0;
         }
-        return dict[aCard.number];
+        return dict[aCard.Number];
     }
 
     private assignValue(aDeck: Deck){
         aDeck.AllCards.forEach(card => {
-            card.value = this.conversion(card);            
+            card.Value = this.conversion(card);            
         });
     }
 
@@ -74,7 +74,7 @@ export class Game {
 
     private calcScore(aPlayer: Player){
         aPlayer.hand.forEach(card => {
-            aPlayer.handWorth += card.value;            
+            aPlayer.handWorth += card.Value;            
         });
     }
 
