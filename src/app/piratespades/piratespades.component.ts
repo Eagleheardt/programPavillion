@@ -227,7 +227,7 @@ export class PiratespadesComponent implements OnInit {
       var CPUDIV = document.getElementById("computerHand");
       CPUDIV.removeChild(CPUDIV.lastChild);
 
-      
+
       var cCard: Card = CPUChooseCard(pCard, aGame.players[1]);
 
       cCard.putBack();
