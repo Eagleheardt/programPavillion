@@ -76,11 +76,11 @@ export class Deck {
         return this._cardBack;
     }
 
-    get redJoker(): Card{
+    get RedJoker(): Card{
         return this._redJoker;
     }
 
-    get blackJoker(): Card{
+    get BlackJoker(): Card{
         return this._blackJoker;
     }
         
@@ -106,7 +106,7 @@ export class Deck {
         });
     }
 
-    get cards(): Card[] {
+    get AllCards(): Card[] {
         return this._cards;
     }
     
