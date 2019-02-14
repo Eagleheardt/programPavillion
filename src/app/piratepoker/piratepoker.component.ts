@@ -37,7 +37,7 @@ export class PiratepokerComponent implements OnInit {
   
       img.setAttribute("value", i.toString());
 
-      img.src = somePlayer.hand[i].image;
+      img.src = somePlayer.hand[i].Image;
   
       var src = document.getElementById(IDwhereItGoes);
       src.appendChild(img);

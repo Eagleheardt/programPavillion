@@ -89,7 +89,7 @@ export class Deck {
             var randIndex = (Math.floor(Math.random() * this._cards.length));
             var aCard = this._cards[randIndex];
 
-        } while(aCard.isDelt);
+        } while(aCard.IsDelt);
 
         aCard.dealOut();
         return aCard;
