@@ -67,8 +67,8 @@ export class Deck {
     |**********************************|
     \**********************************/
 
-    private readonly _redJoker: Card = new Card ('assets/deckOfCardsImages/red_joker.png','XXX','XX'); // red joker
-    private readonly _blackJoker: Card = new Card ('assets/deckOfCardsImages/black_joker.png','XXX','XX'); // black joker
+    private readonly _redJoker: Card = new Card ('assets/deckOfCardsImages/red_joker.png','XXX','1'); // red joker
+    private readonly _blackJoker: Card = new Card ('assets/deckOfCardsImages/black_joker.png','XXX','1'); // black joker
 
     private readonly _cardBack: Card = new Card ('assets/deckOfCardsImages/ZZZ_Card_Backing.png','XXX','0'); // the backside of the card
 
