@@ -1,0 +1,14 @@
+p {
+  text-align: center;
+}
+
+table {
+  text-align: center;
+  align-content: center;
+}
+
+
+#fieldDivider{
+  display: block;
+  min-height: 50px;
+}

@@ -22,6 +22,7 @@ import { MadnessComponent } from './madness/madness.component';
 import { PiratesortComponent } from './piratesort/piratesort.component';
 import { PiratepokerComponent } from './piratepoker/piratepoker.component';
 import { PiratespadesComponent } from './piratespades/piratespades.component';
+import { BattleshipComponent } from './battleship/battleship.component';
 
 /**********************************\
 |**********************************|
@@ -51,7 +52,8 @@ const routes: Routes = [
   {path: 'challenges/madness', component: MadnessComponent},
   {path: 'challenges/piratesort', component: PiratesortComponent},
   {path: 'challenges/piratepoker', component: PiratepokerComponent},
-  {path: 'challenges/piratespades', component: PiratespadesComponent}
+  {path: 'challenges/piratespades', component: PiratespadesComponent},
+  {path: 'challenges/battleship', component: BattleshipComponent}
 
 ];
 
@@ -67,4 +69,3 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule { }
- 
