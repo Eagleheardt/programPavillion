@@ -32,6 +32,7 @@ import { HomeslideshowComponent } from './homeslideshow/homeslideshow.component'
 import { Testslider2Component } from './testslider2/testslider2.component';
 import { PiratepokerComponent } from './piratepoker/piratepoker.component';
 import { CarouselBasicComponent } from './carousel-basic/carousel-basic.component';
+import { BattleshipComponent } from './battleship/battleship.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { CarouselBasicComponent } from './carousel-basic/carousel-basic.componen
     HomeslideshowComponent,
     Testslider2Component,
     PiratepokerComponent,
-    CarouselBasicComponent
+    CarouselBasicComponent,
+    BattleshipComponent
   ],
   imports: [
     BrowserModule,
