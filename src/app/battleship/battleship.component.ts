@@ -30,7 +30,6 @@ export class BattleshipComponent implements OnInit {
 
         cell.appendChild(button);
 
-
       }
     }
   }

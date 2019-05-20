@@ -1,4 +1,4 @@
-p {
+h1, h3 {
   text-align: center;
 }
 
@@ -7,8 +7,21 @@ table {
   align-content: center;
 }
 
-
-#fieldDivider{
+div#fieldDivider{
   display: block;
   min-height: 50px;
+}
+
+.outerWrapper {
+  display: flex;
+}
+
+.innerWrapper {
+  text-align: center;
+  justify-content: center;
+  flex:1;
+}
+
+.innerWrapper > table {
+  margin: 0 auto;
 }
