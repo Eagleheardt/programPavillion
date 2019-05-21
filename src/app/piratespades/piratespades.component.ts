@@ -51,7 +51,7 @@ export class PiratespadesComponent implements OnInit {
         }
       }
     }
-    
+
     if (lowCard.value != 1000){
       console.log("Computer plays: " + lowCard.toString());
       console.log("Player plays: " + playerCard.toString());
@@ -113,9 +113,9 @@ export class PiratespadesComponent implements OnInit {
         img.style.maxWidth = cardWidthPercent;
         img.style.marginRight = cardMargin;
         img.className = className;
-  
+
         img.setAttribute("value", i.toString());
-  
+
         var src = document.getElementById(IDwhereItGoes);
         src.appendChild(img);
       }
@@ -136,7 +136,7 @@ export class PiratespadesComponent implements OnInit {
 
       var cardToReturn: Card = new Card ('','','',0); // blank card
       var lowCard: Card = new Card ('','','',1000); // blank card
-  
+
       if (playerCard.suit == null){
         for(var i = 0; i < cpuPlayer.hand.length; i ++){
           if(cpuPlayer.hand[i].value > cardToReturn.value){
@@ -146,7 +146,7 @@ export class PiratespadesComponent implements OnInit {
         }
         return cardToReturn;
       }
-  
+
       for(var i = 0; i < cpuPlayer.hand.length; i ++){
         if (cpuPlayer.hand[i].suit == playerCard.suit){
           if(cpuPlayer.hand[i].value > playerCard.value){
@@ -162,7 +162,7 @@ export class PiratespadesComponent implements OnInit {
           }
         }
       }
-      
+
       if (lowCard.value != 1000){
         console.log("Computer plays: " + lowCard.toString());
         console.log("Player plays: " + playerCard.toString());
@@ -189,11 +189,11 @@ export class PiratespadesComponent implements OnInit {
         img.style.maxWidth = CARD_WIDTH_PERCENT;
         img.style.marginRight = CARD_MARGIN;
         img.className = className;
-  
+
         img.setAttribute("value", i.toString());
-  
+
         img.addEventListener("click", movePics);
-  
+
         var src = document.getElementById(IDwhereItGoes);
         src.appendChild(img);
       }
@@ -210,9 +210,9 @@ export class PiratespadesComponent implements OnInit {
         img.style.maxWidth = CARD_WIDTH_PERCENT;
         img.style.marginRight = CARD_MARGIN;
         img.className = className;
-  
+
         img.setAttribute("value", i.toString());
-  
+
         var src = document.getElementById(IDwhereItGoes);
         src.appendChild(img);
       }
@@ -239,7 +239,7 @@ export class PiratespadesComponent implements OnInit {
         img.style.maxWidth = CARD_WIDTH_PERCENT;
         img.style.marginRight = CARD_MARGIN;
         img.className = "computerHand";
-  
+
         img.setAttribute("value", cCard.value.toString());
 
       cardsUsed ++;

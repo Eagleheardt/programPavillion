@@ -1,0 +1,44 @@
+h1, h3 {
+  text-align: center;
+}
+
+table {
+  text-align: center;
+  align-content: center;
+}
+
+div#fieldDivider{
+  display: block;
+  min-height: 50px;
+}
+
+div#beginButton {
+  position: absolute;
+  height: 50px;
+  width: 100px;
+  top: 80%;
+  left: 47%;
+}
+
+div#beginButton > button {
+  width: 100%;
+  height: 100%;
+}
+
+.outerWrapper {
+  display: flex;
+}
+
+.innerWrapper {
+  text-align: center;
+  justify-content: center;
+  flex:1;
+}
+
+.innerWrapper > table {
+  margin: 0 auto;
+}
+
+.disabled {
+  visibility: none !important;
+}
