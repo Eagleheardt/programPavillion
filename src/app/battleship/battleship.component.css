@@ -12,6 +12,19 @@ div#fieldDivider{
   min-height: 50px;
 }
 
+div#beginButton {
+  position: absolute;
+  height: 50px;
+  width: 100px;
+  top: 80%;
+  left: 47%;
+}
+
+div#beginButton > button {
+  width: 100%;
+  height: 100%;
+}
+
 .outerWrapper {
   display: flex;
 }
@@ -24,4 +37,8 @@ div#fieldDivider{
 
 .innerWrapper > table {
   margin: 0 auto;
+}
+
+.disabled {
+  visibility: none !important;
 }
