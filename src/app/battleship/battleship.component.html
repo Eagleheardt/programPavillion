@@ -1,19 +1,21 @@
 <h1>Welcome to Battleship!</h1>
 
-<div id="btnBegin">
-  <button>BEGIN</button>
+<div id="beginButton">
+  <button type="button" id="btnReset" (click)='btnReset_Click()'>RESET</button>
+  <button type="button" id="btnBegin" (click)='btnBegin_Click()'>BEGIN</button>
 </div>
 
-<div id="playField" class="tableWrapper">
+<div class="outerWrapper">
 
-  <div class="col">
-    <h3>Computer</h3>
-    <table id="computerField"></table>
+  <div class="innerWrapper">
+      <h3>Computer</h3>
+      <table id="computerField"></table>
   </div>
 
-  <div class="col">
+  <div class="innerWrapper">
     <h3>Player</h3>
     <table id="playerField"></table>
   </div>
 
 </div>
+
