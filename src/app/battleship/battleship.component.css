@@ -1,14 +1,46 @@
-p {
+h1 {
+  text-align: center;
+}
+
+h3 {
+  display: block;
   text-align: center;
 }
 
 table {
   text-align: center;
   align-content: center;
+  display: inline;
+
 }
 
+.tableWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-#fieldDivider{
+.col {
+  flex: 1;
+  justify-content: center;
+  text-align: center;
+}
+
+div#btnBegin{
+  position: absolute;
+  right:45%;
+  top:80%;
+  width: 10%;
+  height: 5%;
+}
+
+div#btnBegin > button{
+  width: 100%;
+  height: 100%;
+}
+
+div#fieldDivider{
   display: block;
   min-height: 50px;
 }
