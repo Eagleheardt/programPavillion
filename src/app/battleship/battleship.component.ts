@@ -58,7 +58,7 @@ export class BattleshipComponent implements OnInit {
         button.addEventListener(
           "click", function() {
             var playerShipsPlaced = BattleshipComponent.getNumberShipsPlaced(fieldName, "red");
-            var startButton:HTMLDivElement = <HTMLDivElement>document.getElementById("beginButton");
+            var startButton:HTMLDivElement = <HTMLDivElement>document.getElementById("btnBegin");
 
             if (this.style.backgroundColor == "red"){
               this.style.backgroundColor = "aqua";
@@ -91,6 +91,16 @@ export class BattleshipComponent implements OnInit {
       } // end cell loop
     } // end row loop
   } // end drawButtons
+
+  public btnReset_Click(){
+    console.log("I got clicked!!");
+
+  }
+
+  public btnBegin_Click(){
+    console.log("I got clicked!!");
+
+  }
 
   private flipButtons(fieldName: string) {
     var aSide: HTMLTableElement = <HTMLTableElement> document.getElementById(fieldName);
