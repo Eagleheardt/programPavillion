@@ -54,7 +54,7 @@ export class BattleshipComponent implements OnInit {
         var playerShipsPlaced = this.playerShipsPlaced;
         var maxShips = this.maxShips;
 
-
+        // begin button click
         button.addEventListener(
           "click", function() {
             var playerShipsPlaced = BattleshipComponent.getNumberShipsPlaced(fieldName, "red");
@@ -62,32 +62,26 @@ export class BattleshipComponent implements OnInit {
 
             if (this.style.backgroundColor == "red"){
               this.style.backgroundColor = "aqua";
-              if (playerShipsPlaced < maxShips){
-                startButton.style.visibility = "hidden";
+              playerShipsPlaced --;
+              if (playerShipsPlaced < 0){
+                playerShipsPlaced = 0;
               }
+              startButton.style.visibility = "hidden";
               return;
             }
 
             if (playerShipsPlaced < maxShips){
               if (this.style.backgroundColor != "red"){
                 this.style.backgroundColor = "red";
+                playerShipsPlaced ++;
               }
-              startButton.style.visibility = "hidden";
-
             }
-            else {
+
+            if (playerShipsPlaced < maxShips){
+              startButton.style.visibility = "hidden";
+            }
+            else{
               startButton.style.visibility = "visible";
-            }
-
-            if (this.style.backgroundColor == "aqua"){
-              playerShipsPlaced --;
-              startButton.style.visibility = "hidden";
-              if (playerShipsPlaced < 0){
-                playerShipsPlaced = 0;
-              }
-            }
-            else {
-              playerShipsPlaced ++;
             }
           } // end click
         );
